@@ -1,0 +1,62 @@
+body{
+    display: flex;
+    background-image: url("../img/background-photo.jpg");
+}
+header{
+    height:40px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+#top-menu{
+    height: 100%;
+    display: flex;
+    flex-flow: row-reverse nowrap;
+    justify-content: flex-end;
+}
+.top-menu-svgs{
+    width: 30px;
+    height: 30px;
+    padding: 5px 20px;
+    margin: 0 2px;
+    border-radius: 5px;
+    fill:yellow;
+}
+.top-menu-svgs:hover{
+    background-color: #555555;
+}
+#logo-title{
+    height: 100%;
+    margin-left: 15px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+#company-logo{
+    margin-right: 5px;
+}
+.top-menu-anchors{
+    text-decoration-line: none;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+#main-context h1{
+    font-size: 28px;
+    margin-bottom: 50px;
+}
+#main-context h2{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+#main-context h3{
+    font-size: 18px;
+    margin-bottom: 50px;
+}
+button{
+    padding: 6px 18px;
+}
+footer{
+    display: none;
+}
