@@ -1,0 +1,49 @@
+#counter-container{
+    margin: 100px auto;
+    border: 3px solid cadetblue;
+    border-radius: 35px;
+    display: flex;
+    flex-flow: row nowrap;
+    width: 1010px;
+    height: 350px;
+    justify-content: space-between;
+    align-items: center;
+}
+#counter-plus, #counter-mines, #counter-number{
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*vertical-align: center;*/
+    border: 1px solid yellow;
+
+}
+#counter-plus:hover, #counter-mines:hover{
+    background-color: #92eef1;
+}
+#counter-plus, #counter-mines{
+    width: 320px;
+    background-color: cadetblue;
+    border-radius: 35px;
+}
+#counter-plus{
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+#counter-mines{
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+ svg{
+     width: 210px;
+     height: 240px;
+     padding: 10px 20px;
+     margin: 15px auto;
+     fill: white;
+
+ }
+ #counter-number{
+     font-size: 10rem;
+     font-family: Tahoma;
+     color: darkslategrey;
+ }

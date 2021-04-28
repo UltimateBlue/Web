@@ -1,0 +1,114 @@
+body{
+    min-width: 1000px;
+}
+#top-banner{
+    margin: 10px 20px;
+}
+
+#logo{
+    /*width:115px;*/
+    /*height:61px;*/
+    display: inline;
+    background-image: url("/images/logo3.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 1px solid pink;
+    margin-top: 8px;
+}
+.logotitle{
+    margin: 10px 20px;
+}
+.banner-title{
+    font-size: 30px;
+    font-weight: 900;
+    text-align: center;
+    line-height: 2rem;
+    margin-right: 5px;
+}
+
+.top-menu-anch{
+    font-size: 1.25rem;
+    line-height: 2rem;
+    display: block;
+    text-align: center;
+}
+
+.top-menu-items{
+    width: 150px;
+    border: 1px solid #E6FFF2;
+    box-shadow: 2px 2px 3px #BCE2D5;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+#main-body{
+    width:100%;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    background-color: #BCE2D5;
+}
+h1{
+    font-size: 2rem;
+}
+p{
+    font-size: 1.15rem;
+}
+
+#left-sidebar{
+    width: 250px;
+    border-left: 1px groove #FFF6F6;
+    padding: 10px 0px;
+    margin: 30px 0 30px 30px;
+    box-shadow: 2px 2px 5px cadetblue;
+}
+main{
+    width: 1000px;
+    min-width: 800px;
+    border-left: 1px groove #FFF6F6;
+    padding: 10px 30px;
+    margin: 30px;
+    box-shadow: 2px 2px 5px cadetblue;
+    /*padding-right: 30px;*/
+
+}
+
+footer
+{
+    margin: 10px;
+}
+#left-sidebar>div{
+    background-color: #f4f4f4;
+    width: 100%;
+    box-shadow: 1px 1px 2px #a2d4c3;
+}
+#left-sidebar>div>h1{
+    margin: 10px;
+    text-align: center;
+
+}
+#fav-links-list{
+    display: flex;
+}
+.c1, .c2, .c3{
+    width: 120px;
+    height: 120px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 2px groove coral;
+    margin: auto;
+    display: block;
+    /*border-radius: 50%;*/
+}
+.c1{
+    background-image: url("../images/armostandari-180.jpg");
+}
+.c2{
+
+    background-image: url("../images/armrahdari-180.png");
+}
+.c3{
+
+    background-image: url("../images/armpolicerah-180.jpg");
+}
