@@ -1,0 +1,73 @@
+html, body, header, nav, button,aside,main,p{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+}
+
+header{
+    height: 60px;
+    width: 100%;
+    background-color: grey;
+    opacity: 80%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Tahoma;
+    position: fixed;
+    top: 0;
+}
+aside{
+    margin-right: 15px;
+}
+nav{
+    margin-left:30px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+#logo-svg{
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    fill: whitesmoke;
+}
+button{
+    color: whitesmoke;
+    font-size: 18px;
+    width: 80px;
+    line-height: 3rem;
+    background-color: transparent;
+    cursor: default;
+}
+button:hover , #logo-svg:hover{
+    background-color: #c8c7c7;
+    border-radius: 3px;
+}
+
+main{
+    width: 60%;
+    /*height: 70vh;*/
+    margin: 200px auto;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 6rem;
+    color: dimgray;
+    font-weight: 600;
+}
+main svg{
+    width: 200px;
+    height: 200px;
+    fill: #6d8aa0;
+}
