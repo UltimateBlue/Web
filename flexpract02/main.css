@@ -1,0 +1,29 @@
+section{
+    width: 800px;
+    height: 120px;
+    margin: 50px auto;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px groove #b5b4b4;
+}
+button{
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-family: Tahoma;
+    font-size: 18px;
+    line-height: 2.5rem;
+    width: 200px;
+    height: 60px;
+    padding: 10px 0;
+    background-color: white;
+    border:0;
+}
+
+button:hover{
+    border-bottom: 3px solid darkcyan;
+}
