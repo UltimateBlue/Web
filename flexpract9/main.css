@@ -1,0 +1,81 @@
+#atf{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: stretch;
+    background-image: url("bird.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+header{
+    position: fixed;
+    top: 0;
+    height: 70px;
+    width: 100%;
+    background-color: dimgray;
+    opacity: 50%;
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+}
+aside, nav{
+    width: 200px;
+    height: 50px;
+    background-color: red;
+    border-radius: 3px;
+    padding: 5px;
+    border: 1px dashed deeppink;
+}
+nav>snip{
+    font-size: 2rem;
+
+}
+ main{
+     height: 100vh;
+    display: flex;
+     justify-content: center;
+     align-items: center;
+     color: white;
+     font-size: 6rem;
+     font-weight: bold;
+     padding-top: 100px;
+ }
+footer{
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: red;
+    text-transform: uppercase;
+    font-size: 10rem;
+    font-weight: bold;
+    font-family: 'Nosifer', cursive;
+}
+svg{
+
+}
+nav:hover>svg{
+    transform: rotate(-90deg);
+
+}
+ul {
+    width: 300px;
+    position: absolute;
+    left: -300px;
+    top: 70px;
+    transition-property: all;
+    transition-timing-function: linear;
+    transition-duration: .5s;
+    background-color: #D6EAF1;
+    font-size: 2rem;
+}
+nav:hover > ul{
+    left: 0px;
+}
+li{
+    margin: 10px 0 10px 0;
+    padding: 15px;
+    border-bottom: 1px solid dimgray ;
+}
