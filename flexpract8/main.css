@@ -1,0 +1,52 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main{
+    width: 60%;
+    height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    color: darkslategray;
+    border: 1px dashed red;
+    font-family: "Gill Sans MT";
+
+}
+
+svg{
+    width: 124px;
+    height:128px;
+    margin-bottom: 2rem;
+    fill: lightgray;
+    animation-name: rotatingface;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+}
+@keyframes rotatingface {
+    100%{
+    transform: rotate(360deg)
+    }
+}
+h1{
+    font-size: 4rem;
+    margin-bottom: 2rem;
+
+}
+h2{
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+button{
+    width: 15rem;
+    height: 5rem;
+    color: white;
+    background-color: cornflowerblue;
+    font-size: 2rem;
+    border-radius: 3px;
+
+}
