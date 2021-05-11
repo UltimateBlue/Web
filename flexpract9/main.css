@@ -35,7 +35,8 @@ nav>snip{
 }
  main{
      height: 100vh;
-    display: flex;
+     display: flex;
+     flex-flow: column nowrap;
      justify-content: center;
      align-items: center;
      color: white;
@@ -80,4 +81,12 @@ li{
     margin: 10px 0 10px 0;
     padding: 15px;
     border-bottom: 1px solid dimgray ;
+}
+main>p{
+    margin: 20px 0;
+}
+audio{
+    background-color: #ffffff;
+    opacity: 50%;
+    border-radius: 30px;
 }
