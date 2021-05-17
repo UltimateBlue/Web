@@ -1,0 +1,111 @@
+body{
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(-20deg, rgb(180, 5, 188),rgb(200, 10, 71));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main{
+    width: 1000px;
+    height:600px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: stretch;
+    position: relative;
+}
+.player-0, .player-1{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 50px;
+    background-color: rgba(240,210,230,0.5);
+}
+.player-0{
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+}
+.player-1{
+    /*background-color: rgba(240, 180, 210, 0.8);*/
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.active{
+    background-color: rgba(250, 214, 232, 0.8);
+    color:white;
+
+}
+.name-tscore-lbl{
+    height: 40%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+h2{
+    font-family: 'Rubik', sans-serif;
+    margin-bottom: 50px;
+
+}
+.total-score{
+    color: darkred;
+}
+.cscore-lbl{
+    width: 220px;
+    height: 120px;
+    background-color: #c7154d;
+    border-radius: 10px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+h3{
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: whitesmoke;
+    font-family: 'Rubik', sans-serif;
+}
+#middle-controlls{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 415px;
+    height: 600px;
+    /*background-color: red;*/
+}
+#rolling-stopping-buttons{
+    display: flex;
+    flex-flow: column nowrap;
+    /*justify-content: space-around;*/
+    align-items: center;
+    height: 200px;
+}
+button{
+    font-family: 'Rubik', sans-serif;
+    padding: 15px 20px;
+    border-radius: 20px;
+    background-color: rgba(250,250,250,.5);
+    margin-bottom: 40px;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: darkslategray;
+}
+#new-game{
+    margin-top: 80px;
+}
+#dice-face>img{
+    width: 100px;
+    height:100px;
+}
+.winner{
+    background-color: black;
+    color:darkred;
+}
