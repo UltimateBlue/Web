@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Game</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../mcleod-reset.css">
+    <link rel="stylesheet" href="styles/main.css">
+
+</head>
+<body>
+<main>
+    <section class="player-0 active">
+        <div class="name-tscore-lbl">
+            <h2 id="player-0">PLAYER 1</h2>
+            <h2 id="total-score-0">0</h2>
+        </div>
+        <div class="cscore-lbl">
+            <h3>CURRENT</h3>
+            <h3 id="current-0">0</h3>
+        </div>
+    </section>
+
+    <section class="player-1">
+        <div class="name-tscore-lbl">
+            <h2 id="player-1">PLAYER 2</h2>
+            <h2 id="total-score-1">0</h2>
+        </div>
+        <div class="cscore-lbl">
+            <h3>CURRENT</h3>
+            <h3 id="current-1">0</h3>
+        </div>
+    </section>
+    <section id="middle-controlls">
+        <button id="new-game">🔄 NEW GAME</button>
+        <div id="dice-face"></div>
+        <div id="rolling-stopping-buttons">
+            <button id="roll">🎲 ROLL DICE</button>
+            <button id="stop">📥 HOLDE</button>
+        </div>
+    </section>
+</main>
+<script src="scripts/script.js"></script>
+</body>
+
+</html>
