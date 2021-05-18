@@ -1,4 +1,4 @@
-let i, targetScore, totalScore, currentScore, activePlayer, dice, gamePlaying, previusScore;
+let i, targetScore, totalScore, currentScore, activePlayer, dice1, dice2, gamePlaying;
 
 init();
 
@@ -39,7 +39,8 @@ function reseting(){
     previusScore=0;
     activePlayer=0;
     totalScore=[0,0];
-    dice=1;
+    dice1=1;
+    dice2=1;
     document.getElementById('current-0').textContent='0';
     document.getElementById('current-1').textContent='0';
     document.getElementById('total-score-0').textContent='0';
@@ -58,25 +59,26 @@ function reseting(){
 
 function rolling() {
     if (gamePlaying) {
-        dice = Math.floor(Math.random() * 6) + 1;
-        if (dice == 1) {
+        dice1 = Math.floor(Math.random() * 6) + 1;
+        dice2 = Math.floor(Math.random() * 6) + 1;
+        if (dice1 == 1 || dice2 == 1) {
             document.querySelector('#current-' + activePlayer).textContent = '0';
             changePlayer();
             currentScore = 0;
-        } else if(dice==6 && previusScore==6) {
+        } else if(dice1 == 6 && dice2 == 6) {
             document.querySelector('#current-' + activePlayer).textContent = '0';
             currentScore = 0;
             totalScore[activePlayer]=0;
             document.getElementById('total-score-'+activePlayer).textContent='0';
             changePlayer();
         }else{
-            previusScore=dice;
-            currentScore = currentScore + dice;
+            currentScore = currentScore + dice1+dice2;
         }
 
         document.getElementById('dice-face1').style.display='block';
         document.querySelector('#dice-face1').innerHTML = '<img' +
-            ' src="images/dice-' + dice + '.png" alt="">';
+            ' src="images/dice-' + dice1 + '.png" alt=""><img' +
+            ' src="images/dice-' + dice2 + '.png" alt="">';
         document.querySelector('#current-' + activePlayer).textContent = currentScore;
     }
 }
@@ -117,4 +119,3 @@ function sleep(miliseconds) {
     }
 }
 
-// document.querySelector('#current-0').textContent=dice;
