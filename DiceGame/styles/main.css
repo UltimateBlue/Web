@@ -77,7 +77,8 @@ h3{
     align-items: center;
     position: absolute;
     top: 0;
-    left: 415px;
+    left: 50%;
+    transform: translateX(-50%);
     height: 600px;
     /*background-color: red;*/
 }
@@ -101,11 +102,36 @@ button{
 #new-game{
     margin-top: 80px;
 }
-#dice-face>img{
+#dice-face1>img{
     width: 100px;
     height:100px;
 }
 .winner{
     background-color: black;
     color:darkred;
+}
+form{
+    font-family: Calibri;
+}
+#tscore{
+    width: 40px;
+    height: 20px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    padding-left: 5px;
+}
+#submit-btn{
+    width: 40px;
+    height: 20px;
+    border-radius: 3px;
+    box-shadow: 1px 1px 2px black;
+    background-image: linear-gradient(lightgray, whitesmoke, lightgray);
+    margin-left: 8px;
+}
+#submit-btn:active{
+    background-image: linear-gradient(gray,white, gray);
+}
+#form-and-btn{
+    display: flex;
+
 }

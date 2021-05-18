@@ -1,13 +1,25 @@
-let totalScore, currentScore, activePlayer, dice, gamePlaying;
+let i, targetScore, totalScore, currentScore, activePlayer, dice, gamePlaying, previusScore;
 
-totalScore = [0,0];
-currentScore=0;
-activePlayer=0;
-gamePlaying=true;
+init();
 
-document.querySelector('#new-game').addEventListener('click',reseting);
-document.querySelector('#roll').addEventListener('click',rolling);
-document.querySelector('#stop').addEventListener('click',holding);
+function init() {
+    totalScore = [0, 0];
+    currentScore = 0;
+    previusScore = 0;
+    activePlayer = 0;
+    targetScore = 100;
+    gamePlaying = true;
+    i=1;
+
+    document.querySelector('#new-game').addEventListener('click', reseting);
+    document.querySelector('#roll').addEventListener('click', rolling);
+    document.querySelector('#stop').addEventListener('click', holding);
+    document.querySelector('#submit-btn').addEventListener('click', submitClicked);
+
+    document.getElementById('tscore').value= targetScore;
+
+}
+
 function changePlayer(){
     activePlayer===0 ? activePlayer=1: activePlayer=0;
     // if(activePlayer==1){
@@ -24,6 +36,7 @@ function changePlayer(){
 
 function reseting(){
     currentScore=0;
+    previusScore=0;
     activePlayer=0;
     totalScore=[0,0];
     dice=1;
@@ -50,13 +63,19 @@ function rolling() {
             document.querySelector('#current-' + activePlayer).textContent = '0';
             changePlayer();
             currentScore = 0;
-
-
-        } else {
+        } else if(dice==6 && previusScore==6) {
+            document.querySelector('#current-' + activePlayer).textContent = '0';
+            currentScore = 0;
+            totalScore[activePlayer]=0;
+            document.getElementById('total-score-'+activePlayer).textContent='0';
+            changePlayer();
+        }else{
+            previusScore=dice;
             currentScore = currentScore + dice;
         }
-        document.getElementById('dice-face').style.display='block';
-        document.querySelector('#dice-face').innerHTML = '<img' +
+
+        document.getElementById('dice-face1').style.display='block';
+        document.querySelector('#dice-face1').innerHTML = '<img' +
             ' src="images/dice-' + dice + '.png" alt="">';
         document.querySelector('#current-' + activePlayer).textContent = currentScore;
     }
@@ -66,7 +85,7 @@ function holding(){
     let lastScore = document.querySelector('#total-score-'+activePlayer).textContent;
     totalScore[activePlayer]=currentScore+parseInt(lastScore);
     document.querySelector('#total-score-' + activePlayer).textContent = totalScore[activePlayer];
-    if(totalScore[activePlayer]>=20){
+    if(totalScore[activePlayer]>=targetScore){
         document.querySelector('.player-'+activePlayer).classList.add('winner');
         document.getElementById('player-'+activePlayer).textContent='WINNER';
         gamePlaying=false;
@@ -79,5 +98,23 @@ function holding(){
     currentScore=0;
 }
 
+function submitClicked(){
+    targetScore=document.getElementById('tscore').value;
+    // undefined, null, 0 or "" are coerced to false
+    // everything else is coerced to true
+    if(!targetScore){
+        targetScore=100;
+    }
+    // console.log(targetScore);
+    // sleep(2000);
+    // document.getElementById('tscore').value = targetScore;
+}
+
+function sleep(miliseconds) {
+    var currentTime = new Date().getTime();
+
+    while (currentTime + miliseconds >= new Date().getTime()) {
+    }
+}
 
 // document.querySelector('#current-0').textContent=dice;
