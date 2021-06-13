@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="../../mcleod-reset.css"> -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+    <title>Document</title>
+</head>
+<body id="bodyid" class="centeralized">
+    <header id="headerid" class="centeralized">
+        <section class="centeralized">
+            <h2>Available Budget in June 2021:</h2>
+            <h1 id="current-amount">+ 0.00</h1>
+            <div id="income-header">
+                <p>INCOME</p>
+                <p id="income-amount"></p>
+            </div>
+            <div id="expense-header">
+                <p>EXPENSES</p>
+                <p id="expense-amount"></p>
+            </div>
+        </section>
+    </header>
+    <main id="mainid" class="centeralized">
+        <form action="">
+            <input list="plus-minus" id="combo-sign" />
+            <datalist id="plus-minus">
+                <option value="+">
+                <option value="-">
+            </datalist>
+            <input type="text" id="descript" placeholder="Add description">
+            <input type="text" id="money-amount" placeholder="Value">
+            <button id="tik">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 48c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m140.204 130.267l-22.536-22.718c-4.667-4.705-12.265-4.736-16.97-.068L215.346 303.697l-59.792-60.277c-4.667-4.705-12.265-4.736-16.97-.069l-22.719 22.536c-4.705 4.667-4.736 12.265-.068 16.971l90.781 91.516c4.667 4.705 12.265 4.736 16.97.068l172.589-171.204c4.704-4.668 4.734-12.266.067-16.971z"/></svg>
+            </button>
+
+        </form>
+    </main>
+    <footer id="footerid" class="centeralized">
+        <section id="incomes-foot">
+            <h2>INCOMES</h2>
+        </section>
+        <section id="expense-foot">
+            <h2>EXPENSES</h2>
+        </section>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

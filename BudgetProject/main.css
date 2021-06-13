@@ -1,0 +1,113 @@
+body{
+   
+    height: 100%;
+    margin: 0 auto;
+    font-family: 'Hind Siliguri', sans-serif;
+       
+}
+
+.centeralized{
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+header{
+    height: 50vh;
+    color: white;
+    background-image: linear-gradient(rgba(50,50,50,.5), rgba(100,100,100,.5)) ,url(7.jpg);
+    /* background-image: url(7.jpg); */
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+header>section{
+    justify-content: flex-start;
+}
+header>section>h2{
+    font-weight: 400;
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
+header>section>h1{
+    font-weight: 400;
+    font-size: 2rem;
+    margin-top: 5px;
+}
+
+#income-header , #expense-header{
+    color:rgb(20,20,20);
+    width: 400px;
+    height:50px;
+    background-color:cadetblue;
+    box-sizing: border-box;
+    padding-left: 15px;
+    margin: 5px;
+    border-radius: 3px;
+}
+#expense-header{
+    background-color: crimson;
+}
+
+main{
+    height: 9vh;
+    background-color:rgb(236, 236, 236);
+    box-shadow: 1px 1px 1px rgb(199, 199, 199);
+}
+form{
+    /* border: 1px solid black; */
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    /* height: 40px; */
+    vertical-align: middle
+
+}
+#combo-sign, #descript, #money-amount,#tik{
+    height: 45px;
+    padding: 0;
+    margin: 0;
+    /* border: 1px dashed pink; */
+    border-radius: 3px;
+    border: 1px solid rgb(230, 230, 230);
+}
+#combo-sign{
+    width: 35px;
+}
+#descript{
+    width: 250px;
+    padding-left: 15px; 
+}
+#money-amount{
+    width: 50px;
+    padding-left: 15px;
+}
+/* #tik-mark:before{
+    content: "\f3fe";
+} */
+svg{
+    width: 30px;
+    fill: rgb(156, 240, 32);
+}
+#tik{
+    /* border: none; */
+    vertical-align: middle;
+    border: none;
+    margin-left: 15px;
+}
+
+#footerid{
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 800px;
+    font-size: 0.9rem;
+    font-weight: 200;
+}
+#incomes-foot{
+    color: rgb(78, 122, 158);
+}
+#expense-foot{
+    color: crimson;
+}
