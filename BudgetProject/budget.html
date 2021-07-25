@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" href="../../mcleod-reset.css"> -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="main.css">
     <title>Document</title>
 </head>
+
 <body id="bodyid" class="centeralized">
     <header id="headerid" class="centeralized">
         <section class="centeralized">
@@ -17,38 +19,79 @@
             <h1 id="current-amount">+ 0.00</h1>
             <div id="income-header">
                 <p>INCOME</p>
-                <p id="income-amount"></p>
+                <div class="amount-sign">
+                    <p>+</p>
+                    <p id="current-income">0.00</p>
+                    <!-- <p id="income-amount"></p> -->
+                </div>
+
             </div>
             <div id="expense-header">
                 <p>EXPENSES</p>
-                <p id="expense-amount"></p>
+                <div class="amount-sign">
+                    <p>-</p>
+                    <p>0.00</p>
+                    <p id="expense-total-perc">55%</p>
+                </div>
+
             </div>
         </section>
     </header>
-    <main id="mainid" class="centeralized">
-        <form action="">
-            <input list="plus-minus" id="combo-sign" />
-            <datalist id="plus-minus">
-                <option value="+">
-                <option value="-">
-            </datalist>
-            <input type="text" id="descript" placeholder="Add description">
-            <input type="text" id="money-amount" placeholder="Value">
-            <button id="tik">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 48c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m140.204 130.267l-22.536-22.718c-4.667-4.705-12.265-4.736-16.97-.068L215.346 303.697l-59.792-60.277c-4.667-4.705-12.265-4.736-16.97-.069l-22.719 22.536c-4.705 4.667-4.736 12.265-.068 16.971l90.781 91.516c4.667 4.705 12.265 4.736 16.97.068l172.589-171.204c4.704-4.668 4.734-12.266.067-16.971z"/></svg>
-            </button>
-
-        </form>
+    <main id="mainid">
+        <select id="plus-minus">
+            <option value="inc">+</option>
+            <option value="dec">-</option>
+        </select>
+        <input type="text" id="descript" placeholder="Add description">
+        <input type="number" id="money-amount" placeholder="Value">
+        <button id="tik">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path
+                    d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 48c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m140.204 130.267l-22.536-22.718c-4.667-4.705-12.265-4.736-16.97-.068L215.346 303.697l-59.792-60.277c-4.667-4.705-12.265-4.736-16.97-.069l-22.719 22.536c-4.705 4.667-4.736 12.265-.068 16.971l90.781 91.516c4.667 4.705 12.265 4.736 16.97.068l172.589-171.204c4.704-4.668 4.734-12.266.067-16.971z" />
+            </svg>
+        </button>
     </main>
-    <footer id="footerid" class="centeralized">
-        <section id="incomes-foot">
+    <footer id="lists-footer">
+        <section id="income-list-section">
             <h2>INCOMES</h2>
+            <div class="lists">
+                <div id="income-0" class="list-items">
+                    <div class="income-des">
+                        <p>Selling my car</p>
+                    </div>
+                    <div class="income-val">
+                        <p>+2150.00</p>
+                        <svg class="del-item" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M347.94 129.86L203.6 195.83a31.938 31.938 0 0 0-15.77 15.77l-65.97 144.34c-7.61 16.65 9.54 33.81 26.2 26.2l144.34-65.97a31.938 31.938 0 0 0 15.77-15.77l65.97-144.34c7.61-16.66-9.54-33.81-26.2-26.2zm-77.36 148.72c-12.47 12.47-32.69 12.47-45.16 0-12.47-12.47-12.47-32.69 0-45.16 12.47-12.47 32.69-12.47 45.16 0 12.47 12.47 12.47 32.69 0 45.16zM248 8C111.03 8 0 119.03 0 256s111.03 248 248 248 248-111.03 248-248S384.97 8 248 8zm0 448c-110.28 0-200-89.72-200-200S137.72 56 248 56s200 89.72 200 200-89.72 200-200 200z"/></svg>
+                    </div>
+
+                    <!-- <div class="del-sign">
+                        <p>+</p>
+                    </div> -->
+                </div>
+            </div>
         </section>
-        <section id="expense-foot">
+        <section id="expense-list-section">
             <h2>EXPENSES</h2>
+            <div class="lists">
+                <div id="exp-0" class="list-items">
+                    <div class="exp-des">
+                        <p>Selling my car</p>
+                    </div>
+                    <div class="exp-val">
+                        <p>-2150.00</p>
+                        <div class="exp-percent">10%</div>
+                        <svg class="del-item" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M347.94 129.86L203.6 195.83a31.938 31.938 0 0 0-15.77 15.77l-65.97 144.34c-7.61 16.65 9.54 33.81 26.2 26.2l144.34-65.97a31.938 31.938 0 0 0 15.77-15.77l65.97-144.34c7.61-16.66-9.54-33.81-26.2-26.2zm-77.36 148.72c-12.47 12.47-32.69 12.47-45.16 0-12.47-12.47-12.47-32.69 0-45.16 12.47-12.47 32.69-12.47 45.16 0 12.47 12.47 12.47 32.69 0 45.16zM248 8C111.03 8 0 119.03 0 256s111.03 248 248 248 248-111.03 248-248S384.97 8 248 8zm0 448c-110.28 0-200-89.72-200-200S137.72 56 248 56s200 89.72 200 200-89.72 200-200 200z"/></svg>
+                    </div>
+
+                    <!-- <div class="del-sign">
+                        <p>-</p>
+                    </div> -->
+                </div>
+            </div>
         </section>
     </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>
