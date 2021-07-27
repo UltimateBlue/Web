@@ -1,200 +1,224 @@
-body{
-    height: 100%;
-    margin: 0 auto;
-    font-family: 'Open Sans', sans-serif; 
+body {
+  height: 100%;
+  margin: 0 auto;
+  font-family: "Open Sans", sans-serif;
 }
 
-.centeralized{
-    width: 100%;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
+.centeralized {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
 }
 
-header{
-    height: 50vh;
-    color: white;
-    background-image: linear-gradient(rgba(50,50,50,.5), rgba(100,100,100,.5)) ,url(8.jpg);
-    /* background-image: url(7.jpg); */
-    background-size: cover;
-    background-repeat: no-repeat;
+header {
+  height: 50vh;
+  color: white;
+  background-image: linear-gradient(
+      rgba(50, 50, 50, 0.5),
+      rgba(100, 100, 100, 0.5)
+    ),
+    url(8.jpg);
+  /* background-image: url(7.jpg); */
+  background-size: cover;
+  background-repeat: no-repeat;
 }
-header>section{
-    justify-content: flex-start;
+header > section {
+  justify-content: flex-start;
 }
-header>section>h2{
-    font-weight: 400;
-    margin-bottom: 5px;
-    font-size: 1.2rem;
+header > section > h2 {
+  font-weight: 400;
+  margin-bottom: 5px;
+  font-size: 1.2rem;
 }
-header>section>h1{
-    font-weight: 400;
-    font-size: 2rem;
-    margin-top: 5px;
+header > section > h1 {
+  font-weight: 400;
+  font-size: 2rem;
+  margin-top: 5px;
 }
 
-#income-header , #expense-header{
-    color:rgb(20,20,20);
-    width: 400px;
-    height:50px;
-    background-color:cadetblue;
-    box-sizing: border-box;
-    padding-left: 15px;
-    margin: 5px;
-    border-radius: 3px;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
+#income-header,
+#expense-header {
+  color: rgb(20, 20, 20);
+  width: 400px;
+  height: 50px;
+  background-color: cadetblue;
+  box-sizing: border-box;
+  padding-left: 15px;
+  margin: 5px;
+  border-radius: 3px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
 }
-#income-amount{
-    margin-right: 15px;
+#income-amount {
+  margin-right: 15px;
 }
-.amount-sign{
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-end;
+#current-income {
+  margin: auto 5px;
 }
-#expense-total-perc{
-    width: 40px;
-    height: 26px;
-    border-radius: 2px;
-    /* padding-left: 3px;
+.amount-sign {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+}
+#expense-total-perc {
+  width: 40px;
+  height: 26px;
+  border-radius: 2px;
+  /* padding-left: 3px;
     padding-right: 30px; */
-    vertical-align: middle;
-    margin: auto 5px;
-    background-color: rgba(229, 226, 227, 0.2);
- 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  vertical-align: middle;
+  margin: auto 5px;
+  background-color: rgba(229, 226, 227, 0.2);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-#expense-header{
-    background-color: crimson;
+#expense-header {
+  background-color: crimson;
 }
 
-main{
-    width: 100%;
-    display: flex;
-    height: 9vh;
-    background-color:rgb(236, 236, 236);
-    box-shadow: 1px 1px 1px rgb(199, 199, 199);
-    /* border: 1px solid black; */
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
-    /* height: 40px; */
-    vertical-align: middle
+main {
+  width: 100%;
+  display: flex;
+  height: 9vh;
+  background-color: rgb(236, 236, 236);
+  box-shadow: 1px 1px 1px rgb(199, 199, 199);
+  /* border: 1px solid black; */
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  /* height: 40px; */
+  vertical-align: middle;
 }
 
-#plus-minus, #descript, #money-amount,#tik{
-    height: 45px;
-    padding: 0;
-    margin: 0;
-    /* border: 1px dashed pink; */
-    border-radius: 3px;
-    border: 1px solid rgb(230, 230, 230);
+#plus-minus,
+#descript,
+#money-amount,
+#tik {
+  height: 45px;
+  padding: 0;
+  margin: 0;
+  /* border: 1px dashed pink; */
+  border-radius: 3px;
+  border: 1px solid rgb(230, 230, 230);
 }
-#plus-minus{width: 35px;}
-#descript{
-    width: 350px;
-    padding-left: 15px; 
-    margin-left: 10px;
+#plus-minus {
+  width: 35px;
 }
-#money-amount{
-    width: 70px;
-    padding-left: 15px;
-    margin-left: 10px;
+#descript {
+  width: 350px;
+  padding-left: 15px;
+  margin-left: 10px;
+}
+#money-amount {
+  width: 70px;
+  padding-left: 15px;
+  margin-left: 10px;
 }
 /* #tik-mark:before{
     content: "\f3fe";
 } */
-svg{
-    width: 30px;
-    fill: rgb(156, 240, 32);
+svg {
+  width: 30px;
+  fill: rgb(156, 240, 32);
 }
-#tik{
-    vertical-align: middle;
-    border: none;
-    margin-left: 15px;
-}
-
-#lists-footer{
-    margin: 0 auto;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 1000px;
-}
-#lists-footer h2{
-    font-size: 1.2rem;
-    font-weight: 400;
-}
-#income-list-section{color:rgb(78,122,158);display: flex;flex-flow:column nowrap;justify-content: center; align-items: center;width: 45%;}
-#expense-list-section{color: crimson;display: flex; flex-flow: column nowrap; justify-content: center; align-items: center; width: 45%;}
-
-
-.lists, #income-list, #expense-list{
-    width: 100%;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: flex-start;
-    color: black;
-}
-.list-items{
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    background-color: rgb(250, 250, 250);
-    border-bottom: 1px solid rgb(172, 172, 172);
-    border-top: 1px solid rgb(177, 177, 177);
-}
-.income-des{
-    /* flex-grow: 1; */
+#tik {
+  vertical-align: middle;
+  border: none;
+  margin-left: 15px;
 }
 
- .income-val{
-    color: rgb(78, 122, 158);
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    vertical-align: middle;
+#lists-footer {
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 1000px;
+}
+#lists-footer h2 {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+#income-list-section {
+  color: rgb(78, 122, 158);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 45%;
+}
+#expense-list-section {
+  color: crimson;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 45%;
+}
 
+.lists,
+#income-list,
+#expense-list {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  color: black;
 }
-.exp-val{
-    color:crimson;
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    vertical-align: middle
-}
-.exp-percent{
-    width: 40px;
-    height: 26px;
-    background-color: rgba(204, 60, 60, 0.15);
-    color: crimson;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 10px;
-    border-radius: 2px;
+.list-items {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  background-color: rgb(250, 250, 250);
+  border-bottom: 1px solid rgb(172, 172, 172);
+  border-top: 1px solid rgb(177, 177, 177);
 }
 
-.del-item{
-    display: none;
-    width: 15;
-    height: 15px;
-    fill: red;
+.income-val {
+  color: rgb(78, 122, 158);
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  vertical-align: middle;
 }
-.list-items:hover > .income-val> .del-item {
-    display: inline;
-    margin-left: 5px;
+.exp-val {
+  color: crimson;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  vertical-align: middle;
 }
-.list-items:hover > .exp-val> .del-item{
-    display: inline;
-    margin-left: 5px;
+.exp-percent {
+  width: 40px;
+  height: 26px;
+  background-color: rgba(204, 60, 60, 0.15);
+  color: crimson;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  border-radius: 2px;
 }
-.list-items:hover{
-    background-color: rgb(231, 231, 231);
+
+.del-item {
+  display: none;
+  width: 15;
+  height: 15px;
+  fill: red;
+}
+.list-items:hover > .income-val > .del-item {
+  display: inline;
+  margin-left: 5px;
+}
+.list-items:hover > .exp-val > .del-item {
+  display: inline;
+  margin-left: 5px;
+}
+.list-items:hover {
+  background-color: rgb(231, 231, 231);
 }
