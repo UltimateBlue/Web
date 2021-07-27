@@ -112,32 +112,29 @@ main{
 svg{
     width: 30px;
     fill: rgb(156, 240, 32);
-    /* margin-left: 10px; */
 }
 #tik{
-    /* border: none; */
     vertical-align: middle;
     border: none;
     margin-left: 15px;
 }
 
 #lists-footer{
+    margin: 0 auto;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-    /* align-items: stretch; */
+    align-items: flex-start;
     width: 1000px;
 }
 #lists-footer h2{
     font-size: 1.2rem;
     font-weight: 400;
 }
-#income-list-section{color: rgb(78, 122, 158);}
-#expense-list-section{color: crimson;}
+#income-list-section{color:rgb(78,122,158);display: flex;flex-flow:column nowrap;justify-content: center; align-items: center;width: 45%;}
+#expense-list-section{color: crimson;display: flex; flex-flow: column nowrap; justify-content: center; align-items: center; width: 45%;}
 
-#income-list-section, #expense-list-section{
-    width: 45%; display: flex; flex-flow: column nowrap; justify-content: center; align-items: center;
-}
+
 .lists, #income-list, #expense-list{
     width: 100%;
     display: flex;

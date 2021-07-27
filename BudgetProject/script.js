@@ -13,11 +13,13 @@ let UIController = (function () {
         plusMinus: 'plus-minus',
         tik: 'tik',
         inc: 'inc',
+        footerLists: 'lists-footer',
+        recordPerc: '.exp-percent',
     };
 
 
     let addIncRecord = function (newRecord) {
-        let html = '<div id="income-%id%" class="list-items"><div class= "income-des"><p>%descript%</p></div><div class="income-val"><p>+%value%</p><svg class="del-item" id="del-inc-item%id%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M347.94 129.86L203.6 195.83a31.938 31.938 0 0 0-15.77 15.77l-65.97 144.34c-7.61 16.65 9.54 33.81 26.2 26.2l144.34-65.97a31.938 31.938 0 0 0 15.77-15.77l65.97-144.34c7.61-16.66-9.54-33.81-26.2-26.2zm-77.36 148.72c-12.47 12.47-32.69 12.47-45.16 0-12.47-12.47-12.47-32.69 0-45.16 12.47-12.47 32.69-12.47 45.16 0 12.47 12.47 12.47 32.69 0 45.16zM248 8C111.03 8 0 119.03 0 256s111.03 248 248 248 248-111.03 248-248S384.97 8 248 8zm0 448c-110.28 0-200-89.72-200-200S137.72 56 248 56s200 89.72 200 200-89.72 200-200 200z" /></svg></div></div>';
+        let html = '<div id="incs-%id%" class="list-items"><div class= "income-des"><p>%descript%</p></div><div class="income-val"><p>+%value%</p><svg class="del-item" id="del-inc-item%id%" width="32px" height="32px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M 16 3 C 8.832031 3 3 8.832031 3 16 C 3 23.167969 8.832031 29 16 29 C 23.167969 29 29 23.167969 29 16 C 29 8.832031 23.167969 3 16 3 Z M 16 5 C 22.085938 5 27 9.914063 27 16 C 27 22.085938 22.085938 27 16 27 C 9.914063 27 5 22.085938 5 16 C 5 9.914063 9.914063 5 16 5 Z M 12.21875 10.78125 L 10.78125 12.21875 L 14.5625 16 L 10.78125 19.78125 L 12.21875 21.21875 L 16 17.4375 L 19.78125 21.21875 L 21.21875 19.78125 L 17.4375 16 L 21.21875 12.21875 L 19.78125 10.78125 L 16 14.5625 Z"/></svg></div></div>';
 
         let newHtml;
         newHtml = html.replace('%id%', newRecord.id);
@@ -28,7 +30,7 @@ let UIController = (function () {
     };
 
     let addExpRecord = function (newRecord) {
-        let html = '<div id="exp-%id%" class="list-items"><div class="exp-des"><p>%descript%</p></div><div class="exp-val">   <p>-%value%</p><div class="exp-percent">%perc%%</div><svg class="del-item" id="del-exp-item%id% xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M347.94 129.86L203.6 195.83a31.938 31.938 0 0 0-15.77 15.77l-65.97 144.34c-7.61 16.65 9.54 33.81 26.2 26.2l144.34-65.97a31.938 31.938 0 0 0 15.77-15.77l65.97-144.34c7.61-16.66-9.54-33.81-26.2-26.2zm-77.36 148.72c-12.47 12.47-32.69 12.47-45.16 0-12.47-12.47-12.47-32.69 0-45.16 12.47-12.47 32.69-12.47 45.16 0 12.47 12.47 12.47 32.69 0 45.16zM248 8C111.03 8 0 119.03 0 256s111.03 248 248 248 248-111.03 248-248S384.97 8 248 8zm0 448c-110.28 0-200-89.72-200-200S137.72 56 248 56s200 89.72 200 200-89.72 200-200 200z"/></svg></div></div>';
+        let html = '<div id="exps-%id%" class="list-items"><div class="exp-des"><p>%descript%</p></div><div class="exp-val">   <p>-%value%</p><div class="exp-percent">%perc%%</div><svg class="del-item" id="del-exp-item%id% width="32px" height="32px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M 16 3 C 8.832031 3 3 8.832031 3 16 C 3 23.167969 8.832031 29 16 29 C 23.167969 29 29 23.167969 29 16 C 29 8.832031 23.167969 3 16 3 Z M 16 5 C 22.085938 5 27 9.914063 27 16 C 27 22.085938 22.085938 27 16 27 C 9.914063 27 5 22.085938 5 16 C 5 9.914063 9.914063 5 16 5 Z M 12.21875 10.78125 L 10.78125 12.21875 L 14.5625 16 L 10.78125 19.78125 L 12.21875 21.21875 L 16 17.4375 L 19.78125 21.21875 L 21.21875 19.78125 L 17.4375 16 L 21.21875 12.21875 L 19.78125 10.78125 L 16 14.5625 Z"/></svg></div></div>';
 
         let newHtml;
         newHtml = html.replace('%id%', newRecord.id);
@@ -40,31 +42,31 @@ let UIController = (function () {
     };
 
     let updateHeader = function (newRecord) {
-        document.getElementById(DOMStrings.currentAmount).innerHTML = '';
-        document.getElementById(DOMStrings.currentAmount).insertAdjacentText('afterbegin', newRecord[1].toFixed(2));
-
-        document.getElementById(DOMStrings.currentIncome).innerHTML = '';
-        document.getElementById(DOMStrings.currentIncome).insertAdjacentText('afterbegin', newRecord[2].toFixed(2));
-
-        document.getElementById(DOMStrings.currentExpense).innerHTML = '';
-        document.getElementById(DOMStrings.currentExpense).insertAdjacentText('afterbegin', newRecord[3].toFixed(2));
-        document.getElementById(DOMStrings.expenseTotalPerc).innerHTML = '';
-        document.getElementById(DOMStrings.expenseTotalPerc).insertAdjacentText('afterbegin', newRecord[4].toFixed(0));
-
+        document.getElementById(DOMStrings.currentAmount).textContent = newRecord[1].toFixed(2);
+        document.getElementById(DOMStrings.currentIncome).textContent = newRecord[2].toFixed(2);
+        document.getElementById(DOMStrings.currentExpense).textContent = newRecord[3].toFixed(2);
+        document.getElementById(DOMStrings.expenseTotalPerc).textContent = newRecord[4]+'%';
     };
 
     return {
+        updateUiPercentages: function (percetages) {
+            let i = 0;
+            if (percetages.length !== 0) {
+                let percents = document.querySelectorAll(DOMStrings.recordPerc);
+                let percentsArr = Array.prototype.slice.call(percents);
+                percentsArr.forEach(function (curr) {
+                    curr.textContent = percetages[i]+'%';
+                    i++;
+                });
+            }
+        },
         updateUI: function (changes, sign) {
-            // console.log('update UI');    ==> OK
-
-            let done = 0;
             if (sign === 'inc') {
-                done = addIncRecord(changes[0]);
+                addIncRecord(changes[0]);
             } else {
-                done = addExpRecord(changes[0]);
+                addExpRecord(changes[0]);
             }
             updateHeader(changes);
-            return done;
         },
 
         getDOM: function () {
@@ -88,6 +90,12 @@ let UIController = (function () {
             // });
             // fieldArr[0].focus();
         },
+
+        updateUiList: function (delElement, changes) {
+            document.getElementById(delElement).remove();
+            updateHeader(changes);
+        },
+
     }
 
 
@@ -129,6 +137,7 @@ let DataController = (function () {
         record.val = val;
 
         db.records.incs.push(record);
+        updatePercentages();
         return [record, db.totalAsset, db.totalIncome, db.totalExpense, db.totalPerc];
 
     };
@@ -141,10 +150,13 @@ let DataController = (function () {
             perc: 0
         };
 
-        db.totalAsset = db.totalAsset - val;;
+        db.totalAsset = db.totalAsset - val;
         db.totalExpense = db.totalExpense + val;
-        db.totalPerc = Math.round((db.totalExpense * 100) / db.totalIncome);
-                
+        if (db.totalIncome !== 0) {
+            db.totalPerc = Math.round((db.totalExpense * 100) / db.totalIncome);
+        } else {
+            db.totalPerc = -1;
+        }
         if (db.records.exps.length > 0) {
             record.id = db.records.exps[db.records.exps.length - 1].id + 1;
         } else {
@@ -152,10 +164,44 @@ let DataController = (function () {
         }
         record.desc = descript;
         record.val = val;
-        record.perc = Math.round((val * 100) / db.totalIncome);
+        if (db.totalIncome !== 0) {
+            record.perc = Math.round((val * 100) / db.totalIncome);
+        } else {
+            record.perc = -1;
+        }
+
 
         db.records.exps.push(record);
         return [record, db.totalAsset, db.totalIncome, db.totalExpense, db.totalPerc];
+    };
+
+    let updatePercentages = function () {
+        if (db.totalIncome !== 0) {
+            db.records.exps.forEach(function (curr) {
+                curr.perc = Math.round((curr.val * 100) / db.totalIncome);
+            });
+        } else {
+            db.records.exps.forEach(function (curr) {
+                curr.perc = -1;
+            });
+        }
+
+    }
+
+    let recalcBudget = function (val, type) {
+        if (type === 'incs') {
+            db.totalAsset = db.totalAsset - val;
+            db.totalIncome = db.totalIncome - val;
+            if (db.totalIncome !== 0) {
+                db.totalPerc = Math.round((db.totalExpense * 100) / db.totalIncome);
+            } else {
+                db.totalPerc = -1;
+            }
+        } else {
+            db.totalAsset = db.totalAsset + val;
+            db.totalExpense = db.totalExpense - val;
+            db.totalPerc = Math.round((db.totalExpense * 100) / db.totalIncome);
+        }
     };
 
 
@@ -169,6 +215,33 @@ let DataController = (function () {
             }
             return changes;
         },
+        delItem: function (id, delType) {
+            let indices, index;
+            // console.log(typeof id);
+            indices = db.records[delType].map(function (curr) {
+                return curr.id;
+            });
+            index = indices.indexOf(id);
+            console.log(index);
+            let val = db.records[delType][index].val;
+            db.records.incs.splice(index, 1);
+            recalcBudget(val, delType);
+            let percents = 0;
+            if (delType === 'incs') {
+                updatePercentages();
+                percents = db.records.exps.map(function (curr) {
+                    return curr.perc;
+                });
+            }
+            console.log(percents);
+            return [percents, db.totalAsset, db.totalIncome, db.totalExpense, db.totalPerc];
+        },
+        getpercentages: function () {
+            let p = db.records.exps.map(function (curr) {
+                return curr.perc;
+            });
+            return Array.prototype.slice.call(p);
+        }
     }
 
 })();
@@ -194,29 +267,47 @@ let Controller = (function (dataCTRL, uiCTRL) {
         let changes = dataCTRL.newValue(sign, descript, val);
 
         // UPDATE UI
-        uiCTRL.updateUI(changes,sign);
-
+        uiCTRL.updateUI(changes, sign);
+        if (sign === 'inc') {
+            console.log(dataCTRL.getpercentages());
+            uiCTRL.updateUiPercentages(dataCTRL.getpercentages());
+        }
         // CLEAR INPUT FILEDS
         uiCTRL.clearFields();
 
     };
 
-    let delItem = function () {
-        console.log('hi');
+    let delItem = function (event) {
+        let delElement = event.target.parentNode.parentNode.id;
+
+        let delSpec = delElement.split('-');
+        if (delSpec.length === 2) {
+            let delType = delSpec[0];
+            let id = parseInt(delSpec[1]);
+
+            if ((delType === 'incs' || delType === 'exps') && typeof id === "number") {
+                console.log(id, delType);
+                let changes = dataCTRL.delItem(id, delType);
+                uiCTRL.updateUiList(delElement, changes);
+                if (delType === 'incs') {
+                    uiCTRL.updateUiPercentages(changes[0]);
+
+                }
+            }
+        }
     };
 
     let init = (function () {
         // ADD EVENT HANDLERS
+        document.getElementById(DOMStrings.footerLists).addEventListener('click', delItem);
         document.getElementById(DOMStrings.tik).addEventListener('click', getInput);
         document.addEventListener('keypress', function (e) {
             if (e.key === 13 || e.which === 13 || e.keyCode === 13) {
                 getInput();
             }
         });
-        // document.querySelector('.del-item').addEventListener('click', function(e){
-        //     delItem();
-        //     console.log(e);
-        // });
+
+
     })();
 
 })(DataController, UIController);
