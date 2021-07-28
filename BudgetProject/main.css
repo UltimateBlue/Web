@@ -96,8 +96,8 @@ main {
 }
 
 #plus-minus,
-#descript,
-#money-amount,
+.descript,
+.money-amount,
 #tik {
   height: 45px;
   padding: 0;
@@ -107,24 +107,31 @@ main {
   border: 1px solid rgb(230, 230, 230);
 }
 #plus-minus {
-  width: 35px;
+  width: 40px;
 }
-#descript {
+.descript {
   width: 350px;
   padding-left: 15px;
   margin-left: 10px;
+  /* border: 1px solid rgb(139, 21, 66); */
 }
-#money-amount {
+.money-amount {
   width: 70px;
   padding-left: 15px;
   margin-left: 10px;
 }
-/* #tik-mark:before{
-    content: "\f3fe";
+.inputs-p:focus {
+  border: 1px solid rgb(78, 122, 158);
+  outline: none;
+}
+/* .descript-p:focus {
+  border-color: rgb(78, 122, 158);
+  outline: none;
 } */
-svg {
+
+.btn-ok {
   width: 30px;
-  fill: rgb(156, 240, 32);
+  fill: rgb(78, 122, 158);
 }
 #tik {
   vertical-align: middle;
@@ -221,4 +228,12 @@ svg {
 }
 .list-items:hover {
   background-color: rgb(231, 231, 231);
+}
+
+.redborders:focus {
+  border: 1px solid crimson !important;
+  outline: none;
+}
+.btn-red {
+  fill: crimson !important;
 }
