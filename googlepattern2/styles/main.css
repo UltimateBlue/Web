@@ -1,0 +1,23 @@
+html,body,div{
+    padding: 0;
+    margin: 0;
+    font-size: 1rem;
+    box-sizing: border-box;
+    direction: rtl;
+}
+body{
+    width: 90%;
+    height: 500px;
+    border: 1px groove cadetblue;
+    display: flex;
+}
+
+div{
+    background-color: darksalmon;
+    border: 1px solid aliceblue;
+}
+#one{
+    background-color: coral;
+    border: 1px solid aliceblue;
+
+}

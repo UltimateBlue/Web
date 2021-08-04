@@ -1,0 +1,22 @@
+body{
+    flex-flow: column wrap;
+    direction: ltr;
+    justify-content: stretch;
+}
+
+#sec{
+    order:-1;
+    height:50%;
+    width: 100%;
+
+}
+#third{
+    order:1;
+    height:50%;
+    width: 100%;
+}
+#one{
+    order:3;
+    width: 150px;
+    height: 100%;
+}
