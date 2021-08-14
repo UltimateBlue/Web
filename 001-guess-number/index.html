@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../mcleod-reset.css" />
+    <link rel="stylesheet" href="main.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <button class="restart-game">AGAIN!</button>
+        <div>(Between 1 and 20)</div>
+      </nav>
+      <h1 class="game-title">Guess My Number!</h1>
+    </header>
+    <aside>
+      <hr />
+      <div class="question-mark">?</div>
+    </aside>
+    <main>
+      <div class="interactive-area">
+        <input type="number" class="player-guess"></input>
+        <button class="check-btn">Check!</button>
+      </div>
+      <div class="informative-area">
+        <form action="">
+          <label for="" class="informative-lbls guess-status"></label>
+          <label for="" class="informative-lbls score"></label>
+          <label for="" class="informative-lbls highscore"></label>
+        </form>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

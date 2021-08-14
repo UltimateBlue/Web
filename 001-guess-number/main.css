@@ -1,0 +1,112 @@
+html {
+  background-color: white;
+}
+body {
+  width: 600px;
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 10px;
+  display: flex;
+  flex-flow: column nowrap;
+  margin: 0 auto;
+  background-color: #222;
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.8rem;
+  color: white;
+  /* border: 1px solid red; */
+}
+header {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: stretch;
+  justify-content: space-between;
+  height: 25vh;
+}
+nav {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  /* align-items: center; */
+}
+nav > button,
+.check-btn {
+  width: 110px;
+  height: 45px;
+  border: 1px solid white;
+  padding: 6px;
+  background-color: white;
+  color: black;
+}
+header > h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
+aside {
+  margin: 50px 0;
+  position: relative;
+}
+.question-mark {
+  background-color: white;
+  color: black;
+  width: 80px;
+  height: 70px;
+  position: absolute;
+  top: -25px;
+  left: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}
+aside > hr {
+  height: 2px;
+  background-color: white;
+}
+main {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: stretch;
+  justify-content: center;
+}
+.interactive-area,
+.informative-area {
+  display: flex;
+  flex-flow: column nowrap;
+  margin: 80px 40px;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.player-guess {
+  width: 200px;
+  height: 80px;
+  border: 2px solid white;
+  background-color: #333;
+  padding: 5px;
+  font-size: 2rem;
+  text-align: center;
+}
+.player-guess:focus {
+  border: 2px solid lightblue;
+}
+
+.check-btn {
+  border-radius: 5px;
+  border: 2px solid lightblue;
+}
+.check-btn:focus {
+  background-color: wheat;
+}
+
+form {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  /* font-size: 1.5rem; */
+}
+form > .informative-lbls {
+  margin: 20px 0;
+}
