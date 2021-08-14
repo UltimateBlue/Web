@@ -1,3 +1,4 @@
+'use strict'
 function restartGame() {
     if (highestScore > memo) {
         memo = highestScore;
