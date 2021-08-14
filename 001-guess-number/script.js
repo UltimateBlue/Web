@@ -41,6 +41,7 @@ function handleNewGuess() {
             highestScore = memo;
         }
         document.querySelector('.highscore').textContent = '🥇 Highscore: ' + highestScore;
+        document.querySelector('body').style.backgroundColor = '#009900'
     } else if (playerGuess < programGuess) {
         document.querySelector('.guess-status').textContent = lowGuess;
         currentScore--;
