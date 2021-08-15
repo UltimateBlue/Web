@@ -1,11 +1,11 @@
 'use strict'
+
 function restartGame() {
     if (highestScore > memo) {
         memo = highestScore;
     }
     init();
     highestScore = memo;
-    // document.querySelector('.highscore').textContent = '🥇 Highscore: ' + highestScore;
 }
 function init() {
 
@@ -18,7 +18,10 @@ function init() {
     document.querySelector('.guess-status').textContent = 'Start Guess ..';
     document.querySelector('.score').textContent = '🏆 Score: ' + currentScore;
     document.querySelector('.highscore').textContent = '🥇 Highscore: ' + highestScore;
+    document.querySelector('.question-mark').textContent = '?';
+    document.querySelector('.question-mark').style.width = '80px';
     document.querySelector('.player-guess').value = '';
+    document.querySelector('body').style.backgroundColor = '#222';
 
 
     // add event handlers
@@ -31,8 +34,6 @@ function init() {
     })
 
 }
-
-
 function handleNewGuess() {
     playerGuess = parseInt(document.querySelector('.player-guess').value);
     if (playerGuess === programGuess) {
@@ -42,7 +43,9 @@ function handleNewGuess() {
             highestScore = memo;
         }
         document.querySelector('.highscore').textContent = '🥇 Highscore: ' + highestScore;
-        document.querySelector('body').style.backgroundColor = '#009900'
+        document.querySelector('body').style.backgroundColor = '#009900';
+        document.querySelector('.question-mark').textContent = '' + programGuess;
+        document.querySelector('.question-mark').style.width = '90px';
     } else if (playerGuess < programGuess) {
         document.querySelector('.guess-status').textContent = lowGuess;
         currentScore--;
@@ -52,6 +55,7 @@ function handleNewGuess() {
     }
     document.querySelector('.score').textContent = '🏆 Score: ' + currentScore;
 }
+
 
 const highGuess = '📈 Too high';
 const lowGuess = '📉 Too low';

@@ -36,6 +36,7 @@ nav > button,
   padding: 6px;
   background-color: white;
   color: black;
+  font-family: "Press Start 2P", cursive;
 }
 header > h1 {
   display: flex;
@@ -87,6 +88,7 @@ main {
   padding: 5px;
   font-size: 2rem;
   text-align: center;
+  color: white;
 }
 .player-guess:focus {
   border: 2px solid lightblue;
