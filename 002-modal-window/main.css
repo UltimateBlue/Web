@@ -1,0 +1,74 @@
+body {
+  width: 80%;
+  height: 100vh;
+  background-image: linear-gradient(to bottom right, green, lightgreen);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  box-sizing: border-box;
+  margin: 0 auto;
+  position: relative;
+}
+
+.divs {
+  background-color: white;
+  /* border: 1px solid blue; */
+  border-radius: 28px;
+  width: 180px;
+  height: 50px;
+  margin-top: 50px;
+  box-shadow: 1px 1px 1px gainsboro;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: tahoma;
+}
+.divs:hover {
+  cursor: pointer;
+}
+
+/* .divs:focus + .fixed-fullscreen-div > .hidden-modal-window {
+  display: flex;
+} */
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+.fixed-fullscreen-div {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 120px;
+}
+.hidden-modal-window {
+  width: 70vw;
+  /* height: 400px; */
+  box-sizing: border-box;
+  padding: 75px;
+  display: flex;
+  flex-flow: column nowrap;
+  position: relative;
+  /* top: 200px;
+  left: 200px; */
+  background-color: white;
+  font-size: 1.3rem;
+  font-family: calibri;
+  color: #333;
+  border-radius: 5px;
+}
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  font-size: 2rem;
+  color: #333;
+  border: none;
+}
