@@ -61,10 +61,6 @@ span {
   margin-bottom: 50px;
 }
 
-a {
-  text-decoration: none;
-}
-
 .fixed-fullscreen-div {
   position: fixed;
   width: 100vw;
