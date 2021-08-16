@@ -1,6 +1,11 @@
 document.querySelector('.close-btn').addEventListener('click', closeModalWin);
 document.querySelectorAll('.divs').forEach(curr => curr.addEventListener('click', openModalWin));
 document.querySelector('.blury').addEventListener('click', closeModalWin);
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+        closeModalWin()
+    }
+});
 
 document.querySelector('.blury').style.display = 'none';
 document.querySelector('.hidden-modal-window').style.display = 'none';
