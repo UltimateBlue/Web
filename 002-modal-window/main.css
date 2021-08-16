@@ -2,12 +2,26 @@ body {
   width: 80%;
   height: 100vh;
   background-image: linear-gradient(to bottom right, green, lightgreen);
+  margin: 0 auto;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+header {
+  width: 100%;
+  margin-top: 50px;
+}
+nav {
+  width: 100%;
+  height: 70px;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-around;
   box-sizing: border-box;
-  margin: 0 auto;
   position: relative;
+  padding: 10px 50px;
 }
 
 .divs {
@@ -16,24 +30,39 @@ body {
   border-radius: 28px;
   width: 180px;
   height: 50px;
-  margin-top: 50px;
   box-shadow: 1px 1px 1px gainsboro;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: tahoma;
-}
-.divs:hover {
+  color: #333;
   cursor: pointer;
 }
+/* .divs:hover {
+} */
 
 /* .divs:focus + .fixed-fullscreen-div > .hidden-modal-window {
   display: flex;
 } */
 
+.blury {
+  backdrop-filter: blur(3px);
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+span {
+  display: block;
+  font-size: 2rem;
+  text-align: right;
+  margin-bottom: 50px;
+}
+
 a {
   text-decoration: none;
-  color: #333;
 }
 
 .fixed-fullscreen-div {
@@ -43,13 +72,14 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 120px;
+  /* padding-top: 120px; */
 }
 .hidden-modal-window {
   width: 70vw;
   /* height: 400px; */
   box-sizing: border-box;
-  padding: 75px;
+  padding: 5px 75px 75px 75px;
+  margin-top: 50px;
   display: flex;
   flex-flow: column nowrap;
   position: relative;
@@ -61,14 +91,18 @@ a {
   color: #333;
   border-radius: 5px;
 }
+
+.hidden-modal-window > p,
+.hidden-modal-window > h1 {
+  line-height: 2rem;
+}
+h1 {
+  font-weight: 600px;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
 .close-btn {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 40px;
-  height: 40px;
-  background-color: transparent;
   font-size: 2rem;
   color: #333;
-  border: none;
+  cursor: pointer;
 }
