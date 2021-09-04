@@ -9,9 +9,10 @@ function btnHandler() {
     let ls = input_data.split('\n');
 
     const newlist = ls.map(curr => {
-        let newWord = '';
-        curr.trim().split('_').forEach(cur => { newWord += cur[0].toUpperCase() + cur.slice(1) });
-        console.log(`${newWord}`);
-
+        if (curr !== '') {
+            let newWord = '';
+            curr.trim().split('_').forEach(cur => { newWord += cur[0].toUpperCase() + cur.slice(1) });
+            console.log(`${newWord}`);
+        }
     })
 }
