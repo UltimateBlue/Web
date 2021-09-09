@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../mcleod-reset.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="main.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <div class="who-is-working">Log in to get started</div>
+      <div><img class="logo" src="logo.png" alt="" /></div>
+      <div class="autorization">
+        <input
+          class="login-info user"
+          type="text"
+          name="user-id"
+          placeholder="User"
+        />
+        <input
+          class="login-info pin"
+          type="text"
+          name="pass"
+          id=""
+          placeholder="PIN"
+        />
+        <button class="login-btn">→</button>
+      </div>
+    </header>
+
+    <main>
+      <div class="balances">
+        <h1>Current balance</h1>
+        <h5>As of 2020/08/15</h5>
+        <div class="reports">
+          <!-- <div class="items">
+            <div class="op-type"></div>
+            <h3 class="money-amount">1300€</h3>
+          </div> -->
+          <!-- <div class="items">
+            <div class="op-type">Deposit</div>
+            <h3 class="money-amount">1300€</h3>
+          </div>
+          <div class="items">
+            <div class="op-type">Deposit</div>
+            <h3 class="money-amount">1300€</h3>
+          </div>
+          <div class="items">
+            <div class="op-type">Deposit</div>
+            <h3 class="money-amount">1300€</h3>
+          </div> -->
+        </div>
+      </div>
+      <div class="banking-operations">
+        <h1 class="total-balance"></h1>
+        <div class="transfer-money bo">
+          <h1>Transfer money</h1>
+          <input class="transfer-to opt-in" type="text" name="transferTo" />
+          <input
+            class="transfer-amount opt-in"
+            type="number"
+            name="transferAmmount"
+          />
+          <button class="opt-btn transfer-btn">→</button>
+        </div>
+        <div class="request-loan bo">
+          <h1>Request loan</h1>
+          <input class="req-loan opt-in" type="number" name="transferTo" />
+          <button class="opt-btn loan-btn">→</button>
+        </div>
+        <div class="close-account bo">
+          <h1>Close account</h1>
+          <input class="close-acc-usr opt-in" type="text" name="transferTo" />
+          <input
+            class="close-acc-pin opt-in"
+            type="number"
+            name="transferAmmount"
+          />
+          <button class="opt-btn close-btn">→</button>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+    <script src="script.js"></script>
+  </body>
+</html>

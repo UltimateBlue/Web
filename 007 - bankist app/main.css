@@ -1,0 +1,152 @@
+body {
+  width: 95vw;
+  background-color: rgb(236, 241, 247);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  margin: 0 auto;
+}
+header {
+  margin: 25px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  color: rgb(44, 44, 44);
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.logo {
+  width: 50px;
+  height: 50px;
+}
+
+.login-info {
+  width: 110px;
+  height: 35px;
+  border-radius: 25px;
+  margin-right: 5px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+.login-btn {
+  font-size: 1.2rem;
+  color: rgb(44, 44, 44);
+}
+
+.main-content {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: stretch;
+  justify-content: center;
+  /* border: 1px dashed pink; */
+}
+.banking-operations > h1 {
+  font-family: "Poppins", sans-serif;
+  color: rgb(44, 44, 44);
+  font-size: 2rem;
+  font-weight: 500;
+  margin: 20px 15px;
+  text-align: end;
+}
+.bo {
+  width: 400px;
+  height: 150px;
+  border-radius: 20px;
+  margin: 20px 10px;
+  box-sizing: border-box;
+  padding: 40px;
+  font-family: "Poppins", sans-serif;
+  color: rgb(44, 44, 44);
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.transfer-money {
+  background-color: rgb(255, 196, 0);
+}
+
+.request-loan {
+  background-color: rgb(19, 160, 26);
+}
+
+.close-account {
+  background-color: rgb(228, 42, 104);
+}
+
+.balances {
+  margin: 20px 10px;
+  width: 600px;
+  height: 550px;
+  border-radius: 20px;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  color: rgb(44, 44, 44);
+  font-size: 1.2rem;
+  font-weight: 500;
+  /* border: 1px solid pink; */
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  /* align-items: center; */
+}
+
+.balances > h5 {
+  /* text-align: start; */
+  /* margin-bottom: 10px; */
+  font-size: 0.8rem;
+  margin-top: 10px;
+  color: gray;
+}
+.reports {
+  width: 100%;
+  height: 520px;
+  background-color: #ffffff;
+  margin: 20px 0;
+  box-sizing: border-box;
+  padding: 10px;
+  overflow-y: scroll;
+}
+.opt-in {
+  width: 120px;
+  height: 30px;
+  border-radius: 5px;
+  opacity: 0.5;
+  margin: 15px 4px 3px 0;
+  /* padding: 3px; */
+}
+.opt-btn {
+  width: 40px;
+  height: 30px;
+  background-color: #ffffff;
+  opacity: 0.8;
+  border-radius: 5px;
+}
+.items {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgb(211, 210, 210);
+  /* box-shadow: 0 2px 1px rgb(100, 100, 100); */
+  padding: 25px 15px;
+}
+.op-type {
+  width: 85px;
+  height: 18px;
+  font-size: 0.5rem;
+  border-radius: 9px;
+  color: whitesmoke;
+  font-size: 0.8rem;
+  text-align: center;
+  /* vertical-align: middle; */
+}
+.op-type-withdraw {
+  width: 95px;
+  background-image: linear-gradient(rgb(243, 66, 125), rgb(228, 42, 104));
+}
+.op-type-depos {
+  background-image: linear-gradient(rgb(82, 153, 92), rgb(99, 204, 113));
+}
+
+.dontShow {
+  display: none;
+}
