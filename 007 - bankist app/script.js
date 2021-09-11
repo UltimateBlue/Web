@@ -20,7 +20,7 @@ let userNik = {
     total_out() {
         return this.totalActions.filter(curr => curr < 0).reduce((acc, curr) => acc + curr, 0);
     },
-    ramaining() {
+    remaining() {
         return this.totalActions.reduce((acc, curr) => acc + curr, 0);
     },
     totalInterest() {
@@ -38,7 +38,7 @@ let userSu = {
     total_out() {
         return this.totalActions.filter(curr => curr < 0).reduce((acc, curr) => acc + curr, 0);
     },
-    ramaining() {
+    remaining() {
         return this.totalActions.reduce((acc, curr) => acc + curr, 0);
     },
     totalInterest() {
@@ -49,7 +49,7 @@ let userSu = {
 
 const users_db = [userNik, userSu];
 const interest_per = 1.2;
-
+let sorted = false;
 
 
 
@@ -62,16 +62,21 @@ const interest_per = 1.2;
     document.querySelector('.transfer-btn').addEventListener('click', transferTo);
     document.querySelector('.loan-btn').addEventListener('click', requestLoan);
     document.querySelector('.close-btn').addEventListener('click', closeAccount);
+    document.querySelector('.middle-summery').addEventListener('click', sortReports);
     document.body.addEventListener('keypress', e => { if (document.activeElement.classList.contains('login-info') && e.key === 'Enter') { authentication(); } else if (document.activeElement.classList.contains('req-loan') && e.key === 'Enter') { requestLoan(); } else if (document.activeElement.classList.contains('transfer-amount') && e.key === 'Enter') { transferTo(); } else if (document.activeElement.classList.contains('close-acc-pin') && e.key === 'Enter') { closeAccount(); } });
-
+    currentUser = undefined;
 })();
 
 
 function authentication() {
+    // e.preventDefault();
     let user = document.querySelector(elements.username).value.toLowerCase();
     let pass = parseInt(document.querySelector(elements.password).value);
+    // currentUser = users_db.find(curr => curr.name === user);
+    // currentUser.pass === pass && loginTo();
+    // 
     users_db.forEach(curr => { if (curr.name === user && curr.pass === pass) currentUser = curr; });
-    loginTo();
+    currentUser && loginTo();
 }
 
 function loginTo() {
@@ -88,46 +93,54 @@ function loginTo() {
     document.querySelector('main').classList.add('main-content');
     document.querySelector('footer').classList.add('footer-part');
 
-    updateAccountReports();
+    updateAccountReports(currentUser.totalActions);
     updateFooter()
 }
 
-function updateAccountReports() {
+function updateAccountReports(actions) {
     let reportHTML = '';
-    let actions = currentUser.totalActions;
+    // let actions = currentUser.totalActions;
     actions.forEach((curr, idx) => reportHTML = `<div class="items"><div class="op-type ${curr > 0 ? 'op-type-depos' : 'op-type-withdraw'}">${curr > 0 ? '' + (idx + 1) + ' deposits' : '' + (idx + 1) + ' withdraw'}</div><h3 class="money-amount">${curr}€</h3></div>` + reportHTML);
 
     // IMPORTANT TO DO THIS!!
     document.querySelector('.reports').innerHTML = '';
     document.querySelector('.reports').insertAdjacentHTML('afterbegin', reportHTML);
-    console.log(currentUser.ramaining());
+    console.log(currentUser.remaining());
 
-    document.querySelector('.total-balance').textContent = '' + currentUser.ramaining() + '€';
+    document.querySelector('.total-balance').textContent = '' + currentUser.remaining() + '€';
 }
 
 function updateFooter() {
-    let htmlStr = `<div class="left-summery"><div class="in-summery foot-summery">IN  <span style="color: rgb(19, 160, 26); font-size:1rem;">${currentUser.total_in()}€</span></div><div class="out-summery foot-summery">OUT  <span style="color: rgb(228, 42, 104); font-size:1rem;">${Math.abs(currentUser.total_out())}€</span></div><div class="int-summery foot-summery">INTEREST  <span style="color: rgb(19, 160, 26); font-size:1rem;">${currentUser.totalInterest()}€</span></div></div><div class="middle-summery"> SORT</div><div class="right-summery">You will be logged out in 05:00</div>`;
+    // let htmlStr = `<div class="left-summery"><div class="in-summery foot-summery">IN  <span style="color: rgb(19, 160, 26); font-size:1rem;">${currentUser.total_in()}€</span></div><div class="out-summery foot-summery">OUT  <span style="color: rgb(228, 42, 104); font-size:1rem;">${Math.abs(currentUser.total_out())}€</span></div><div class="int-summery foot-summery">INTEREST  <span style="color: rgb(19, 160, 26); font-size:1rem;">${currentUser.totalInterest()}€</span></div></div><div class="middle-summery">&downarrow: SORT</div><div class="right-summery">You will be logged out in 05:00</div>`;
     // let htmlStr = `<div>Hello world!..</div>`;
-    document.querySelector('footer').innerHTML = '';
-    document.querySelector('footer').insertAdjacentHTML('afterbegin', htmlStr);
+    // document.querySelector('footer').innerHTML = '';
+    // document.querySelector('footer').insertAdjacentHTML('afterbegin', htmlStr);
+    document.querySelector('.IN-footer').textContent = currentUser.total_in() + '€';
+    document.querySelector('.OUT-footer').textContent = Math.abs(currentUser.total_out()) + '€';
+    document.querySelector('.INT-footer').textContent = currentUser.totalInterest() + '€';
+    document.querySelector('.right-summery').textContent = `You will be logged out in 05:00`;
 }
 
 function clearFields() {
     document.querySelector(elements.username).value = '';
+    document.querySelector(elements.username).blur();
     document.querySelector(elements.password).value = '';
-    document.querySelector('.opt-in').value = '';
-
+    document.querySelector(elements.password).blur();   // so loose the focus!
+    document.querySelectorAll('.opt-in').forEach(curr => curr.value = '');
 }
 
 function transferTo() {
     const rec = document.querySelector('.transfer-to').value;
     const amount = parseFloat(document.querySelector('.transfer-amount').value);
-    let receiver;
-    users_db.forEach(curr => { if (curr.fullName === rec) receiver = curr; });
-    receiver.totalActions.push(amount);
-    currentUser.totalActions.push(-1 * amount);
-    updateAccountReports();
-    updateFooter();
+    let receiver = users_db.find(curr => curr.fullName === rec);
+    // users_db.forEach(curr => { if (curr.fullName === rec) receiver = curr; });
+    if (amount > 0 && currentUser.remaining() >= amount && receiver && receiver.fullName !== currentUser.fullName) {
+        receiver?.totalActions.push(amount);
+        currentUser?.totalActions.push(-1 * amount);
+        updateAccountReports(currentUser.totalActions);
+        updateFooter();
+        clearFields();
+    }
 }
 
 function requestLoan() {
@@ -138,12 +151,40 @@ function requestLoan() {
     if (!Number.isNaN(loanAmount)) {
         currentUser.totalActions.push(loanAmount);
 
-        updateAccountReports();
-        updateFooter()
+        updateAccountReports(currentUser.totalActions);
+        updateFooter();
+        clearFields();
     }
 
 }
 
 function closeAccount() {
+    const usrCheck = document.querySelector('.close-acc-usr').value;
+    const pinCheck = parseInt(document.querySelector('.close-acc-pin').value);
 
+    if (usrCheck === currentUser.name && pinCheck === currentUser.pass) {
+        const idx = users_db.findIndex(curr => curr.name === usrCheck);
+        users_db.splice(idx, 1)
+        console.log(users_db);
+
+        clearFields();
+
+        // bring account info on the screen..
+        // 1. edit header..
+        document.querySelector(elements.welcomeMessage).textContent = `Log in to get started`;
+
+
+        document.querySelector('main').classList.add('dontShow');
+        document.querySelector('footer').classList.add('dontShow');
+        document.querySelector('main').classList.remove('main-content');
+        document.querySelector('footer').classList.remove('footer-part');
+    }
+
+}
+
+
+function sortReports() {
+    let reps = sorted ? currentUser.totalActions : currentUser.totalActions.slice().sort((a, b) => a > b ? 1 : -1);
+    updateAccountReports(reps);
+    sorted = !sorted;
 }

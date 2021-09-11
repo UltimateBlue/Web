@@ -178,3 +178,6 @@ header {
 .foot-summery {
   margin-right: 25px;
 }
+.middle-summery {
+  cursor: pointer;
+}
