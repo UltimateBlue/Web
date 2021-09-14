@@ -64,15 +64,15 @@ header {
   font-weight: 500;
 }
 .transfer-money {
-  background-color: rgb(255, 196, 0);
+  background-image: linear-gradient(rgb(255, 196, 0), rgb(248, 211, 89));
 }
 
 .request-loan {
-  background-color: rgb(19, 160, 26);
+  background-image: linear-gradient(rgb(82, 153, 92), rgb(99, 204, 113));
 }
 
 .close-account {
-  background-color: rgb(228, 42, 104);
+  background-image: linear-gradient(rgb(243, 66, 125), rgb(245, 112, 157));
 }
 
 .balances {
@@ -126,19 +126,19 @@ header {
 }
 .items {
   display: flex;
+  flex-flow: row nowrap;
   justify-content: space-between;
   box-sizing: border-box;
-  border-bottom: 1px solid rgb(211, 210, 210);
+  border-bottom: 1px solid rgb(235, 235, 235);
   /* box-shadow: 0 2px 1px rgb(100, 100, 100); */
   padding: 25px 15px;
 }
 .op-type {
   width: 85px;
   height: 18px;
-  font-size: 0.5rem;
   border-radius: 9px;
   color: whitesmoke;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -147,7 +147,7 @@ header {
 }
 .op-type-withdraw {
   width: 95px;
-  background-image: linear-gradient(rgb(243, 66, 125), rgb(228, 42, 104));
+  background-image: linear-gradient(rgb(243, 66, 125), rgb(224, 85, 132));
 }
 .op-type-depos {
   background-image: linear-gradient(rgb(82, 153, 92), rgb(99, 204, 113));
@@ -180,4 +180,15 @@ header {
 }
 .middle-summery {
   cursor: pointer;
+}
+/* .coloring-0 {
+  background-color: rgb(248, 251, 253);
+}
+.coloring-1 {
+  background-color: rgb(251, 255, 255);
+} */
+.item-type-date {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }

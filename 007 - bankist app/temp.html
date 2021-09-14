@@ -1,0 +1,2 @@
+<div class="items coloring-${idx % 2}">
+    < class="item-type-date"><div class="op-type ${curr > 0 ? 'op-type-depos' : 'op-type-withdraw'}">${curr > 0 ? '' + (idx + 1) + ' deposits' : '' + (idx + 1) + ' withdraw'}</div><p style="font-size: .6rem;"> ${'  ' + currentUser.movementsDates[idx].split('T')[0].replace('-', '/').replace('-', '/')}</p></div><h3 class="money-amount">${curr.toFixed(2)}€</h3></div>
