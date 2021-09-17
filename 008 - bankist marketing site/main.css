@@ -13,7 +13,6 @@ main {
   width: 100%;
   padding: 20px 40px;
   font-family: inherit;
-  border: 1px solid pink;
 }
 .fixed-header {
   background-color: whitesmoke;
@@ -49,6 +48,7 @@ li {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  text-align: center;
 }
 
 main,
@@ -127,6 +127,7 @@ footer {
 }
 .features,
 .operations,
+.advs,
 footer {
   padding: 0 180px;
   display: flex;
@@ -134,23 +135,35 @@ footer {
   align-items: center;
   margin: 20px 0;
   border-bottom: 1px solid rgb(214, 218, 218);
+  /* border: 1px solid red; */
+}
+.advs {
+  margin-bottom: 0;
+  border-bottom: none;
 }
 .features-head,
-.operation-head {
+.operation-head,
+.advs-head {
   width: 700px;
 }
 .features-head > h3,
-.operation-head > h3 {
+.operation-head > h3,
+.advs-head > h3 {
   color: #4bbb7d;
   /* line-height: 1.5rem; */
   font-size: 1.5rem;
   margin: 30px 0;
 }
 .features-head > p,
-.operation-head > p {
+.operation-head > p,
+.advs-head > p,
+.open-account-footer > p {
   font-size: 2.5rem;
   font-weight: 500;
   color: rgb(66, 66, 66);
+}
+.open-account-footer > p {
+  color: white;
 }
 .features-body {
   display: flex;
@@ -184,15 +197,25 @@ footer {
 }
 .content2-buttom-txt > h3,
 .c-b-t > h3,
-.op-body-text > h3 {
+.op-body-text > h3,
+.adv-quots > h3,
+.advs-person > div > h3 {
   font-size: 1.5rem;
   font-weight: 500;
   color: rgb(66, 66, 66);
   margin: 20px 0;
 }
+.advs-person > div {
+  margin-left: 10px;
+}
+.advs-person > div > h3 {
+  margin: 0%;
+}
 .content2-buttom-txt > p,
 .c-b-t > p,
-.op-body-text > p {
+.op-body-text > p,
+.adv-quots > blockquote,
+.advs-person > div > p {
   font-size: 1rem;
   font-weight: 100;
   color: rgb(66, 66, 66);
@@ -240,4 +263,98 @@ footer {
 }
 .op-btn3 {
   background-color: rgb(236, 95, 95);
+}
+.qt-arrow {
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border-radius: 25px;
+}
+.advs-body {
+  /* display: flex; */
+  width: 900px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  /* border: 1px solid red; */
+}
+.adv-quots {
+  width: 600px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 50px 0;
+}
+.advs-person {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 20px;
+}
+.advs-person > img {
+  width: 80px;
+  height: 80px;
+  border-radius: 40px;
+}
+footer {
+  background-color: rgb(66, 66, 66);
+  color: white;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  width: 100%;
+  /* border: 1px solid red; */
+  padding: 0px;
+}
+.open-account-footer {
+  margin: 80px 0;
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid rgb(91, 92, 92);
+  /* border: 1px solid red; */
+}
+.footer-open-title {
+  width: 800px;
+  line-height: 3rem;
+  margin-bottom: 50px;
+  text-align: center;
+}
+.open-account-footer > button {
+  background-color: #4bbb7d;
+  width: 400px;
+  height: 50px;
+  border-radius: 25px;
+  color: black;
+  margin-bottom: 100px;
+}
+.footer-end {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.footer-menu-item {
+  color: white;
+}
+.footer-copyright {
+  font-size: 1rem;
+  font-weight: 100;
+  margin: 20px 0 100px 0;
+}
+.footer-logo {
+  width: 50px;
+  height: 50px;
+  margin: 40px 0;
+}
+.footer-copyright > span {
+  color: rgb(190, 190, 190);
+}
+.footer-menu-item {
+  font-size: 1rem;
+  font-weight: 100;
 }
