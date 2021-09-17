@@ -1,0 +1,243 @@
+body,
+main {
+  font-family: "Poppins", sans-serif;
+  background-color: rgb(242, 248, 245);
+  display: flex;
+  flex-flow: column nowrap;
+}
+.gen-header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  height: 100px;
+  width: 100%;
+  padding: 20px 40px;
+  font-family: inherit;
+  border: 1px solid pink;
+}
+.fixed-header {
+  background-color: whitesmoke;
+  /* opacity: 80%; */
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.logo {
+  width: 10%;
+  /* height: 20%; */
+  margin: 5px 20px;
+}
+ul,
+nav {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 5px 10px;
+}
+li {
+  margin: 0px 15px;
+  font-size: 1.2rem;
+  color: rgb(83, 83, 83);
+}
+.header-open-acc-btn {
+  width: 135px;
+  height: 50px;
+  background-color: rgb(108, 216, 108);
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+main,
+footer {
+  /* width: 80%; */
+  margin: 0 auto;
+  font-family: inherit;
+}
+.circle-svg {
+  fill: #8bdd9e;
+  height: 100;
+  width: 100;
+}
+/* above the fold */
+.content-1 {
+  padding: 0 180px;
+  margin: 60px 0;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 100vh;
+  font-family: inherit;
+  border-bottom: 1px solid rgb(214, 218, 218);
+}
+/* .content-1::after {
+  content: "";
+} */
+
+.content-sec-1 {
+  display: flex;
+  font-family: inherit;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  color: rgb(66, 66, 66);
+  font-weight: 500;
+
+  /* margin-right: 50px; */
+}
+.content-asid-img1 {
+  width: 500px;
+}
+
+.content-sec-h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 3.8rem;
+  font-weight: 600;
+  line-height: 1.15;
+}
+.highlight {
+  position: relative;
+  z-index: 0;
+}
+.highlight::after {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.7;
+  transform: scale(1.07, 1.07) skewX(-15deg);
+  background-image: linear-gradient(-30deg, #4bbb7d, #5bff81);
+}
+.content-sec-p1 {
+  font-size: 1.45rem;
+  font-weight: 600;
+  margin: 30px 0;
+}
+.content-sec-1 > a {
+  color: rgb(108, 216, 108);
+  text-decoration: underline;
+}
+.features,
+.operations,
+footer {
+  padding: 0 180px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  margin: 20px 0;
+  border-bottom: 1px solid rgb(214, 218, 218);
+}
+.features-head,
+.operation-head {
+  width: 700px;
+}
+.features-head > h3,
+.operation-head > h3 {
+  color: #4bbb7d;
+  /* line-height: 1.5rem; */
+  font-size: 1.5rem;
+  margin: 30px 0;
+}
+.features-head > p,
+.operation-head > p {
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: rgb(66, 66, 66);
+}
+.features-body {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  margin: 50px 10px;
+}
+.features-body-1 {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+}
+.content2-img {
+  width: 100%;
+  filter: blur(10px);
+}
+.content2-buttom-txt {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  margin-left: 60px;
+}
+.c-b-t {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  margin-right: 60px;
+}
+.content2-buttom-txt > h3,
+.c-b-t > h3,
+.op-body-text > h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: rgb(66, 66, 66);
+  margin: 20px 0;
+}
+.content2-buttom-txt > p,
+.c-b-t > p,
+.op-body-text > p {
+  font-size: 1rem;
+  font-weight: 100;
+  color: rgb(66, 66, 66);
+  line-height: 1.5rem;
+}
+
+.operation-head > p {
+  margin-bottom: 20px;
+}
+.op-body-context {
+  background-color: white;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 80px;
+  margin: 0 50px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.operation-body {
+  position: relative;
+  margin-top: 50px;
+}
+.op-navigator {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: -25px;
+  left: 120px;
+}
+.op-nav-btn {
+  margin: 0 40px;
+  width: 220px;
+  height: 50px;
+  border-radius: 25px;
+  /* border: 1px solid red; */
+}
+.op-btn1 {
+  background-color: yellow;
+}
+.op-btn2 {
+  background-color: #4bbb7d;
+}
+.op-btn3 {
+  background-color: rgb(236, 95, 95);
+}
