@@ -1,0 +1,12 @@
+.space {
+  height: 1200px;
+  background-color: brown;
+}
+div {
+  width: 500px;
+  font-size: 2rem;
+  margin: 100px;
+}
+.jump-place {
+  border: 1px solid red;
+}

@@ -1,16 +1,34 @@
+:root {
+  --color-primary: #5ec576;
+  --color-primary-darker: #4bbb7d;
+  --color-primary-opacity: #5ec5763a;
+  --color-secondary: #ffcb03;
+  --color-secondary-darker: #ffbb00;
+  --color-tertiary: #ff585f;
+  --color-tertiary-darker: #fd424b;
+  --color-menu-title: #666;
+  --color-border-bottom: rgb(214, 218, 218);
+  --gradient-primary: linear-gradient(to top left, #39b385, #9be15d);
+  --gradient-secondary: linear-gradient(to top left, #ffb003, #ffcb03);
+}
+
+body {
+  position: relative;
+}
 body,
 main {
   font-family: "Poppins", sans-serif;
   background-color: rgb(242, 248, 245);
   display: flex;
   flex-flow: column nowrap;
+  align-items: center;
 }
-.gen-header {
+.general-header {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   height: 100px;
-  width: 100%;
+  width: 100vw;
   padding: 20px 40px;
   font-family: inherit;
 }
@@ -22,9 +40,12 @@ main {
   left: 0;
 }
 .logo {
-  width: 10%;
+  transform: scale(0.4, 0.7);
+  /* width: 20px; */
+  /* height: auto; */
   /* height: 20%; */
-  margin: 5px 20px;
+  /* margin: 5px 20px; */
+  /* border: 1px solid pink; */
 }
 ul,
 nav {
@@ -34,21 +55,38 @@ nav {
   align-items: center;
   margin: 5px 10px;
 }
-li {
+.header-menu-items,
+.footer-menu-items {
   margin: 0px 15px;
   font-size: 1.2rem;
   color: rgb(83, 83, 83);
+  cursor: pointer;
 }
-.header-open-acc-btn {
-  width: 135px;
+
+.header-open-acc-btn,
+.cookie-btn {
+  width: 165px;
   height: 50px;
-  background-color: rgb(108, 216, 108);
+  background-color: var(--color-primary);
   border-radius: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   text-align: center;
+}
+.goToLink,
+.general-header {
+  transition: filter 0.5s linear;
+}
+.add-brightness {
+  filter: brightness(200%);
+}
+.red-brightness {
+  filter: brightness(50%);
+}
+.reset-brightness {
+  filter: brightness(100%);
 }
 
 main,
@@ -58,27 +96,31 @@ footer {
   font-family: inherit;
 }
 .circle-svg {
-  fill: #8bdd9e;
-  height: 100;
-  width: 100;
+  fill: var(--color-primary-opacity);
+  height: 80px;
+  width: 80px;
 }
 /* above the fold */
-.content-1 {
-  padding: 0 180px;
-  margin: 60px 0;
+.above-fold-intro {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: flex-start;
   height: 100vh;
+  padding: 60px 180px;
+  /* margin: 60px 0; */
   font-family: inherit;
-  border-bottom: 1px solid rgb(214, 218, 218);
+  border-bottom: 1px solid var(--color-border-bottom);
 }
+/* .intro-body {
+  display: flex;
+  align-items: flex-start;
+} */
 /* .content-1::after {
   content: "";
 } */
 
-.content-sec-1 {
+.intro-context {
   display: flex;
   font-family: inherit;
   flex-flow: column nowrap;
@@ -93,16 +135,19 @@ footer {
   width: 500px;
 }
 
-.content-sec-h1 {
+.intro-header {
   font-family: "Poppins", sans-serif;
   font-size: 3.8rem;
   font-weight: 600;
   line-height: 1.15;
 }
+/* // ############################BEGIN################################ */
+
 .highlight {
   position: relative;
   z-index: 0;
 }
+
 .highlight::after {
   display: block;
   content: "";
@@ -114,16 +159,19 @@ footer {
   z-index: -1;
   opacity: 0.7;
   transform: scale(1.07, 1.07) skewX(-15deg);
-  background-image: linear-gradient(-30deg, #4bbb7d, #5bff81);
+  /* background-image: linear-gradient(-30deg, #4bbb7d, #5bff81); */
+  background-image: var(--gradient-primary);
 }
-.content-sec-p1 {
+/* // ############################END################################ */
+.intro-body {
   font-size: 1.45rem;
   font-weight: 600;
   margin: 30px 0;
 }
-.content-sec-1 > a {
-  color: rgb(108, 216, 108);
+.link-jump-to {
+  color: var(--color-primary);
   text-decoration: underline;
+  transition: all 0.5s fade-in-out;
 }
 .features,
 .operations,
@@ -133,9 +181,12 @@ footer {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  margin: 20px 0;
-  border-bottom: 1px solid rgb(214, 218, 218);
+  margin-top: 50px;
+  border-bottom: 1px solid var(--color-border-bottom);
   /* border: 1px solid red; */
+}
+.features {
+  margin-top: 200px;
 }
 .advs {
   margin-bottom: 0;
@@ -149,7 +200,7 @@ footer {
 .features-head > h3,
 .operation-head > h3,
 .advs-head > h3 {
-  color: #4bbb7d;
+  color: var(--color-primary);
   /* line-height: 1.5rem; */
   font-size: 1.5rem;
   margin: 30px 0;
@@ -202,7 +253,7 @@ footer {
 .advs-person > div > h3 {
   font-size: 1.5rem;
   font-weight: 500;
-  color: rgb(66, 66, 66);
+  color: var(--color-menu-title);
   margin: 20px 0;
 }
 .advs-person > div {
@@ -211,6 +262,14 @@ footer {
 .advs-person > div > h3 {
   margin: 0%;
 }
+.op-body-text {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  transition: all 0.5 fade-in-out;
+}
 .content2-buttom-txt > p,
 .c-b-t > p,
 .op-body-text > p,
@@ -218,10 +277,18 @@ footer {
 .advs-person > div > p {
   font-size: 1rem;
   font-weight: 100;
-  color: rgb(66, 66, 66);
+  color: var(--color-menu-title);
   line-height: 1.5rem;
 }
-
+.rel-container {
+  position: relative;
+  height: 400px;
+  width: 610px;
+  /* border: 1px solid red; */
+}
+.three-tabs {
+  height: 150px;
+}
 .operation-head > p {
   margin-bottom: 20px;
 }
@@ -244,9 +311,12 @@ footer {
 .op-navigator {
   display: flex;
   justify-content: center;
-  position: absolute;
-  top: -25px;
-  left: 120px;
+  align-items: center;
+  height: 60px;
+  /* position: absolute; */
+  transform: translateY(30px);
+  /* top: -25px;
+  left: 60px; */
 }
 .op-nav-btn {
   margin: 0 40px;
@@ -256,13 +326,14 @@ footer {
   /* border: 1px solid red; */
 }
 .op-btn1 {
-  background-color: yellow;
+  background-color: var(--color-secondary);
+  /* transform: translateY(5px); */
 }
 .op-btn2 {
-  background-color: #4bbb7d;
+  background-color: var(--color-primary);
 }
 .op-btn3 {
-  background-color: rgb(236, 95, 95);
+  background-color: var(--color-tertiary);
 }
 .qt-arrow {
   width: 50px;
@@ -286,6 +357,9 @@ footer {
   justify-content: flex-start;
   align-items: flex-start;
   margin: 50px 0;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .advs-person {
   display: flex;
@@ -299,12 +373,12 @@ footer {
   border-radius: 40px;
 }
 footer {
+  width: 100vw;
   background-color: rgb(66, 66, 66);
   color: white;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  width: 100%;
   /* border: 1px solid red; */
   padding: 0px;
 }
@@ -325,7 +399,7 @@ footer {
   text-align: center;
 }
 .open-account-footer > button {
-  background-color: #4bbb7d;
+  background-color: var(--color-primary);
   width: 400px;
   height: 50px;
   border-radius: 25px;
@@ -357,4 +431,83 @@ footer {
 .footer-menu-item {
   font-size: 1rem;
   font-weight: 100;
+}
+
+.modal-open-acc {
+  width: 600px;
+  height: 450px;
+  position: fixed;
+  /* // ############################################################ */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* // ############################################################ */
+  padding: 60px 100px;
+  opacity: 0;
+  z-index: -1;
+  transition: visibility 0.3s linear;
+  background-color: white;
+  box-shadow: 1px 2px 1px #ddd;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.close-modal {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  font-size: 2.5rem;
+  border: 1px solid red;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.modal-input {
+  border: 1px solid #666;
+  width: 250px;
+  height: 35px;
+}
+.modal-open-acc > h1 {
+  margin-bottom: 40px;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 2.5rem;
+}
+.modal-win-lbl {
+  font-size: 1rem;
+  font-weight: 100;
+  margin-right: 15px;
+}
+.modal-form {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+.form-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.form-btn {
+  width: 180px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: #4bbb7d;
+  margin-top: 20px;
+  align-self: center;
+}
+
+.modal-show {
+  /* // ############################################################ */
+  visibility: visible;
+  /* // ############################################################ */
+  opacity: 1;
+  z-index: 2;
+}
+.modal-hide {
+  visibility: hidden;
+  z-index: -1;
+  opacity: 0;
 }

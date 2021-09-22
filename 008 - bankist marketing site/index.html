@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../mcleod-reset.css" />
     <link
@@ -16,39 +17,50 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="main.css" />
+    <!-- <script defer src="script.js"></script> -->
     <title>Document</title>
   </head>
   <body>
-    <header class="gen-header">
+    <header class="general-header">
       <!-- add/remove fixed-header class -->
       <!-- <div class="logo"><img src="img/logo.png" alt="" srcset=""></div> -->
       <img class="logo" src="img/logo.png" alt="" srcset="" />
-      <nav>
+      <nav class="top-nav">
         <ul class="header-menu">
-          <li class="header-menu-items">Features</li>
-          <li class="header-menu-items">Operations</li>
-          <li class="header-menu-items">Testimonials</li>
-          <li class="header-menu-items header-open-acc-btn">Open Account</li>
+          <li class="header-menu-items">
+            <a class="goToLink link-js" href="#features">Features</a>
+          </li>
+          <li class="header-menu-items">
+            <a class="goToLink link-js" href="#operations">Operations</a>
+          </li>
+          <li class="header-menu-items">
+            <a class="goToLink link-js" href="#advs">Testimonials</a>
+          </li>
+          <li class="header-menu-items header-open-acc-btn openModal link-js">
+            Open Account
+          </li>
         </ul>
       </nav>
     </header>
     <main>
-      <article class="content-1">
-        <section class="content-sec-1">
-          <h1 class="content-sec-h1">
+      <article class="above-fold-intro">
+        <!-- <div class="intro-body"> -->
+        <section class="intro-context">
+          <h1 class="intro-header">
             When <span class="highlight">banking</span> meets
             <span class="highlight">minimalist</span>
           </h1>
-          <p class="content-sec-p1">
+          <p class="intro-body">
             A simpler banking experience for a simpler life.
           </p>
-          <a href="">Learn more ↓</a>
+          <button class="link-jump-to">Learn more ↓</button>
         </section>
         <aside class="content-asid1">
           <img src="img/hero.png" alt="" class="content-asid-img1" />
         </aside>
+        <!-- </div> -->
       </article>
-      <article class="features">
+      <article class="features" id="features">
         <div class="features-head">
           <h3>FEATURES</h3>
           <p>Everything you need in a modern bank and more.</p>
@@ -137,7 +149,7 @@
           </div>
         </section>
       </article>
-      <article class="operations">
+      <article class="operations" id="operations">
         <div class="operation-head">
           <h3>OPERATIONS</h3>
           <p>Everything as simple as possible, but no simpler.</p>
@@ -166,66 +178,106 @@
                 d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z"
               />
             </svg>
-            <div class="op-body-text">
-              <h3>Tranfser money to anyone, instantly! No fees, no BS.</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
-              </p>
+            <div class="three-tabs rel-container">
+              <div class="op-body-text opt-body-1">
+                <h3>Tranfser money to anyone, instantly! No fees, no BS.</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+              </div>
+              <div class="op-body-text opt-body-2">
+                <h3>
+                  Buy a home or make your dreams come true, with instant loans.
+                </h3>
+                <p>
+                  Duis aute irure dolor in reprehenderit in voluptate velit esse
+                  cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                  occaecat cupidatat non proident, sunt in culpa qui officia
+                  deserunt mollit anim id est laborum.
+                </p>
+              </div>
+              <div class="op-body-text opt-body-3">
+                <h3>
+                  No longer need your account? No problem! Close it instantly.
+                </h3>
+                <p>
+                  Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                  qui officia deserunt mollit anim id est laborum. Ut enim ad
+                  minim veniam, quis nostrud exercitation ullamco laboris nisi
+                  ut aliquip ex ea commodo consequat.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </article>
-      <article class="advs">
+      <article class="advs" id="advs">
         <div class="advs-head">
           <h3>NOT SURE YET?</h3>
           <p>Millions of Bankists are already making their lifes simpler.</p>
         </div>
         <div class="advs-body">
           <button class="qt-arrow left-arrow">←</button>
-          <div class="adv-quots quot1">
-            <h3>Best financial decision ever!</h3>
-            <blockquote>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Accusantium quas quisquam non? Quas voluptate nulla minima
-              deleniti optio ullam nesciunt, numquam corporis et asperiores
-              laboriosam sunt, praesentium suscipit blanditiis. Necessitatibus
-              id alias reiciendis, perferendis facere pariatur dolore veniam
-              autem esse non voluptatem saepe provident nihil molestiae.
-            </blockquote>
-            <address class="advs-person">
-              <img src="img/user-1.jpg" alt="" />
-              <div>
-                <h3>Aarav Lynn</h3>
-                <p>San Francisco, USA</p>
-              </div>
-            </address>
+          <div class="rel-container">
+            <div class="adv-quots quot1">
+              <h3>Best financial decision ever!</h3>
+              <blockquote>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Accusantium quas quisquam non? Quas voluptate nulla minima
+                deleniti optio ullam nesciunt, numquam corporis et asperiores
+                laboriosam sunt, praesentium suscipit blanditiis. Necessitatibus
+                id alias reiciendis, perferendis facere pariatur dolore veniam
+                autem esse non voluptatem saepe provident nihil molestiae.
+              </blockquote>
+              <address class="advs-person">
+                <img src="img/user-1.jpg" alt="" />
+                <div>
+                  <h3>Aarav Lynn</h3>
+                  <p>San Francisco, USA</p>
+                </div>
+              </address>
+            </div>
+
+            <div class="adv-quots quot2">
+              <h3>The last step to becoming a complete minimalist</h3>
+              <blockquote>
+                Quisquam itaque deserunt ullam, quia ea repellendus provident,
+                ducimus neque ipsam modi voluptatibus doloremque, corrupti
+                laborum. Incidunt numquam perferendis veritatis neque
+                repellendus. Lorem, ipsum dolor sit amet consectetur adipisicing
+                elit. Illo deserunt exercitationem deleniti.
+              </blockquote>
+              <address class="advs-person">
+                <img src="img/user-2.jpg" alt="" />
+                <div>
+                  <h3>Miyah Miles</h3>
+                  <p>London, UK</p>
+                </div>
+              </address>
+            </div>
+            <div class="adv-quots quot3">
+              <h3>Finally free from old-school banks</h3>
+              <blockquote>
+                Debitis, nihil sit minus suscipit magni aperiam vel tenetur
+                incidunt commodi architecto numquam omnis nulla autem,
+                necessitatibus blanditiis modi similique quidem. Odio aliquam
+                culpa dicta beatae quod maiores ipsa minus consequatur error
+                sunt, deleniti saepe aliquid quos inventore sequi.
+                Necessitatibus id alias reiciendis, perferendis facere.
+              </blockquote>
+              <address class="advs-person">
+                <img src="img/user-3.jpg" alt="" />
+                <div>
+                  <h3>Francisco Gomes</h3>
+                  <p>Lisbon, Portugal</p>
+                </div>
+              </address>
+            </div>
           </div>
           <button class="qt-arrow right-arrow">→</button>
-          <!-- <div class="adv-quots quot2">
-            <h3></h3>
-            <p></p>
-            <div class="advs-person">
-              <img src="" alt="" />
-              <div>
-                <h3></h3>
-                <p></p>
-              </div>
-            </div>
-          </div>
-          <div class="adv-quots quot3">
-            <h3></h3>
-            <p></p>
-            <div class="advs-person">
-              <img src="" alt="" />
-              <div>
-                <h3></h3>
-                <p></p>
-              </div>
-            </div>
-          </div> -->
         </div>
       </article>
     </main>
@@ -235,7 +287,7 @@
           The best day to join Bankist was one year ago. The second best is
           today!
         </p>
-        <button>Open Your Free Account Today!</button>
+        <button class="openModal">Open Your Free Account Today!</button>
       </article>
       <section class="footer-end">
         <nav class="footer-nav">
@@ -256,6 +308,28 @@
         </p>
       </section>
     </footer>
+
+    <div class="modal-open-acc">
+      <button class="close-modal">×</button>
+      <h1>
+        Open your bank account in just <span class="highlight">5 minutes</span>
+      </h1>
+      <form class="modal-form" action="" method="post">
+        <div class="form-item">
+          <label class="modal-win-lbl" for="fname">First Name</label>
+          <input class="modal-input" type="text" name="fname" id="fname" />
+        </div>
+        <div class="form-item">
+          <label class="modal-win-lbl lname" for="lname">Last Name</label>
+          <input class="modal-input" type="text" name="lname" id="lname" />
+        </div>
+        <div class="form-item">
+          <label class="modal-win-lbl email" for="email">Email Address</label>
+          <input class="modal-input" type="email" name="email" id="email" />
+        </div>
+        <button class="form-btn">Next step →</button>
+      </form>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
