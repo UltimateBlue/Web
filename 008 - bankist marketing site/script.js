@@ -94,6 +94,7 @@ header.addEventListener('mouseover', e => {
     clicked.classList.remove('reset-brightness', 'add-brightness');
     header.classList.add('add-brightness');
     clicked.classList.add('red-brightness');
+    console.log(`${clicked.classList}  *******  ${header.classList}`);
 
 })
 /*
@@ -111,8 +112,12 @@ li.forEach(lin => lin.addEventListener('mouseover', e => {
 header.addEventListener('mouseout', e => {
     if (!e.target.classList.contains('link-js')) return;
     // header.style.filter = "brightness(100%)";
+    header.classList.remove('add-brightness');
+    e.target.classList.remove('red-brightness')
     header.classList.add('reset-brightness');
     header.querySelectorAll('.link-js').forEach(curr => curr.classList.add('reset-brightness'))
+    console.log(`${e.target.classList}  *******  ${header.classList}`);
+
     // header.querySelectorAll('.goToLink').forEach(curr => curr.style.filter = "brightness(100%)")
 });
 
@@ -182,3 +187,16 @@ document.querySelector('.op-navigator').addEventListener('click', e => {
 );
 
 
+///////////////////////////////////////////////////
+// sticky menubar
+
+document.addEventListener('scroll', e => {
+    const pos = document.querySelector('.features').getBoundingClientRect();
+
+    if (parseInt(window.scrollY) > pos.top) {
+        document.querySelector('.general-header').classList.add('fixed-header');
+    } else {
+        document.querySelector('.general-header').classList.remove('fixed-header');
+
+    }
+})

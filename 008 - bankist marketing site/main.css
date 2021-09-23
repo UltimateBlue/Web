@@ -31,13 +31,16 @@ main {
   width: 100vw;
   padding: 20px 40px;
   font-family: inherit;
+  /* position: sticky;
+  top: 50px; */
 }
 .fixed-header {
-  background-color: whitesmoke;
-  /* opacity: 80%; */
+  background-color: white;
+  opacity: 0.9;
   position: fixed;
   top: 0;
   left: 0;
+  right: 0;
 }
 .logo {
   transform: scale(0.4, 0.7);
