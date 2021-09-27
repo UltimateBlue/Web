@@ -1,8 +1,28 @@
 'use strict'
+const feature = document.querySelector('.features');
+const cookieMsg = document.createElement('div');
+const header = document.querySelector('.general-header');
+const li = document.querySelectorAll('.link-js');
+const tinyBtns = document.querySelectorAll('.btn-advs-nav');
+let currentSlide = 0;
+const slides = document.querySelectorAll('.adv-quots');
+const arrowBtns = document.querySelectorAll('.qt-arrow');
+const arrowBtnL = document.querySelector('.left-arrow');
+const arrowBtnR = document.querySelector('.right-arrow');
+
+(function () {
+    window.scrollTo(0, 0);
+})();
+// window.scrollTo(0, 0);
+// console.log(`${window.scrollX} ,  ${window.scrollY}`);
+
+// window.onbeforeunload = function () {
+//     window.scrollTo(0, 0);
+// };
+
 //////////////////////////////////////////////
 // cookie
 //////////////////////////////////////////////
-const cookieMsg = document.createElement('div');
 (function () {
     cookieMsg.innerHTML = 'we use cookies to improve our service and support you. <button class="cookie-btn">Got it</button>';
     // const cookieBtn = document.querySelector('.cookie-btn');
@@ -56,7 +76,6 @@ function closeModal() {
 // smooth scroll
 //////////////////////////////////////////////
 document.querySelector('.link-jump-to').addEventListener('click', () => {
-    const feature = document.querySelector('.features');
     feature.scrollIntoView({ behavior: 'smooth' });
 });
 
@@ -85,8 +104,7 @@ document.querySelector('.header-menu').addEventListener('click', function (e) {
 });
 
 // unhovered menu items fade effect
-const header = document.querySelector('.general-header');
-const li = document.querySelectorAll('.link-js');
+
 header.addEventListener('mouseover', e => {
     const clicked = e.target;
     if (!clicked.classList.contains('link-js')) return;
@@ -189,7 +207,7 @@ document.querySelector('.op-navigator').addEventListener('click', e => {
 
 ///////////////////////////////////////////////////
 // sticky menubar
-
+/*
 document.addEventListener('scroll', e => {
     const pos = document.querySelector('.features').getBoundingClientRect();
 
@@ -200,3 +218,183 @@ document.addEventListener('scroll', e => {
 
     }
 })
+*/
+const root_margin = `-${header.getBoundingClientRect().height}px`;
+const obsOptions = {
+    root: null,
+    threshold: 0,
+    rootMargin: root_margin,
+}
+const obsCallback = function (entries, observer) {
+    entries.forEach(entry => entry.isIntersecting ? header.classList.remove('fixed-header') : header.classList.add('fixed-header'))
+}
+
+const observer = new IntersectionObserver(obsCallback, obsOptions);
+observer.observe(document.querySelector('.above-fold-intro'));
+
+/////////////////////////////////////////////////////////////////
+// reveal section titles on scroll
+const obsOptions2 = {
+    root: null,
+    threshold: .2,
+}
+const obsCallback2 = function (entries, observer2) {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('slow-showup');
+        // entry.isIntersecting ? entry.target.classList.add('slow-showup') : entry.target.classList.remove('slow-showup');
+        observer2.unobserve(entry.target)
+        // console.log(`${entry}  ---  ${entry.target.innerText}:   ${entry.target.classList}`);
+
+    })
+}
+
+const observer2 = new IntersectionObserver(obsCallback2, obsOptions2);
+document.querySelectorAll('.section-head').forEach(el => observer2.observe(el))
+
+//////////////////////////////////////////////////////
+// lazy loading images
+
+const obsOptions3 = {
+    root: null,
+    threshold: 0,
+}
+function obsCallback3(entries, observer3) {
+    console.log(`hiiiiiiiiiiiiiiiiiii`);
+
+    const [entry] = entries;
+    entry.target.src = entry.target.dataset.src;
+    entry.target.style.filter = "blur(0)";
+
+    observer3.unobserve(entry.target);
+
+}
+
+
+const observer3 = new IntersectionObserver(obsCallback3, obsOptions3);
+document.querySelectorAll('.content2-img').forEach(el => observer3.observe(el));
+
+
+
+/////////////////////////////////////////////////////////////
+// implementing slider
+
+
+slides.forEach((slide, idx) => {
+    slide.style.transform = `translateX(${100 * idx}%)`;
+    if (idx !== 0) slide.style.visibility = 'hidden';
+});
+
+arrowBtnL.addEventListener('click', e => {
+    currentSlide--;
+
+    reArrangeSlides();
+});
+arrowBtnR.addEventListener('click', e => {
+    currentSlide++;
+    reArrangeSlides();
+});
+/*
+arrowBtns.forEach(btn => {
+    btn.addEventListener('click', e => {
+        const direction = btn.classList[1].split('-')[0];
+        switch (direction) {
+            case 'left':
+                currentSlide--;
+                if (currentSlide < 0) currentSlide = 2;
+                ///////////////////////////////////////////////////////////
+                // break is vital in switch-case in javascript!!
+                ///////////////////////////////////////////////////////////
+                break;
+
+
+            case 'right':
+                currentSlide++;
+                if (currentSlide > 2) currentSlide = 0;
+                break;
+
+        }
+        */
+
+function reArrangeSlides() {
+    if (currentSlide < 0) currentSlide = 2;
+    if (currentSlide > 2) currentSlide = 0;
+
+    console.log(currentSlide);
+
+    slides.forEach((slide, idx) => {
+        let percX = (idx - currentSlide) * 100;
+        slide.style.transform = `translateX(${percX}%)`;
+        idx === currentSlide ? slide.style.visibility = 'visible' : slide.style.visibility = 'hidden';
+        // idx !== currentSlide ? slide.style.display = 'none' : slide.style.display = 'flex'
+    });
+
+
+    tinyBtns.forEach(btn => {
+        if (btn.classList.contains('btn-adv-' + currentSlide)) {
+            btn.style.backgroundColor = '#666';
+        } else {
+            btn.style.backgroundColor = '#999';
+        }
+    });
+
+}
+
+// sliding by use of below small buttons
+
+tinyBtns.forEach(btn => btn.addEventListener('click', e => {
+    currentSlide = parseInt(btn.classList[1].split('-')[2]);
+
+    /*const ev = new Event('click');
+    arrowBtns.dispatchEvent(ev)*/
+    reArrangeSlides();
+}));
+
+// sliding by keybourd arrows
+const obsOptions4 = {
+    root: null,
+    threshold: .1,
+}
+let flag = false;
+
+// control keys does not handle with keypress event listeners!!!!!!!!!!!!!!!
+/*Note: The onkeypress event is not fired for all keys (e.g. ALT, CTRL, SHIFT, ESC) in all browsers. To detect only whether the user has pressed a key, use the onkeydown event instead, because it works for all keys.*/
+document.addEventListener('keydown', keySliding);
+const obsCallback4 = function (entries, observer4) {
+    entries.forEach(entry => {
+        if (entry.intersectionRatio > .6) {
+            flag = true;
+            console.log(`attached`);
+        } else {
+            flag = false;
+            console.log(`detached`);
+        }
+        console.log(`${entry.intersectionRatio}`);
+
+    })
+}
+const observer4 = new IntersectionObserver(obsCallback4, obsOptions4);
+observer4.observe(document.querySelector('.advs-body'));
+
+function keySliding(e) {
+    console.log(e.key);
+
+
+    if (e.key === 'ArrowRight' && flag) {
+        currentSlide++;
+        console.log(`right arrow pressed`);
+
+        reArrangeSlides()
+    } else if (e.key === 'ArrowLeft' && flag) {
+        currentSlide--;
+        console.log(`left arrow pressed`);
+
+        reArrangeSlides();
+
+    }
+    console.log(`############################################`);
+}
+
+
+
+////////////////////////////////////////////////////////////////////////////////////
