@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+ <script defer src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+ integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+ crossorigin=""></script>
+
+    <script defer src="newscript.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="mcleod-reset.css">
+    <link rel="stylesheet" href="main.css">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <div class="input__pane">
+            <section class="up-sec">
+            <h1>mapty</h1>
+            <div class="input__div hidden">
+                <form class="input__form" action="" method="post">
+                    <label for="type">Type</label>
+                    <select name="workout__type" id="type">
+                        <option selected value="Running">Running</option>
+                        <option value="Cycling">Cycling</option>
+                    </select>
+                    <label for="distance">Distance</label>
+                    <input class="usr__input" type="text" name="" id="distance" placeholder="km">
+                    <label for="duration">Duration</label>
+                    <input class="usr__input" type="text" name="" id="duration" placeholder="min">
+                    <label for="elev__cad" id="cadlbl">Cadence</label>
+                    <label for="elev__cad" id = "elevlbl">Elev Gain</label>
+                    <input class="usr__input" type="text" name="" id="elev__cad" placeholder="step/min">
+                    <button type="submit" style="display: none";></button>
+                    <!-- <input style="display: none;" class="usr__input" type="text" name="" id="cadence" placeholder="step/meter"> -->
+
+                </form>
+            </div>
+            <div class="workout__histories">
+                <!-- <div class="workout__history cycling__hist">
+                    <h1 class="hist_title">Cycling on October 20</h1>
+                    <p>🏃 5 <span class="unit">km</span>        20 <span class="unit">MIN</span>        ⚡️ 4.0 <span class="unit">MIN/KM</span>        175 <span class="unit">SPM</span></p>
+                </div>
+                <div class="workout__history running__hist">
+                    <h1 class="hist_title">Running on October 20</h1>
+                    <p>🏃 5 <span class="unit">km</span>        20 <span class="unit">MIN</span>        ⚡️ 4.0 <span class="unit">MIN/KM</span>        175 <span class="unit">SPM</span></p>
+                </div> -->
+                
+            </div>
+        </section>
+    
+            <p class="copyright">© Copyright by <span class="designer">Jonas Schmedtmann</span>. Use for learning or your portfolio. Don't use to teach. Don't claim as your own.</p>
+        </div>
+        <div id="map__pane"></div>
+    </main>
+    
+</body>
+</html>
